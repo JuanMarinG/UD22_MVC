@@ -26,29 +26,24 @@ public class ConnectionDB {
 			prop.load(input);
 			user = prop.getProperty("user");
 			password = prop.getProperty("password");
-		} catch (IOException ex) {
-			ex.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conexion = DriverManager.getConnection(urlBaseDades, user, password);
-			System.out.println("Server connected");
+			conexion = DriverManager.getConnection(urlBaseDades, user, password);			
 
-		} catch (SQLException | ClassNotFoundException ex) {
-			System.out.println("No se ha podido conectar a la base de datos");
-			System.out.println(ex);
+		} catch (SQLException | ClassNotFoundException e) {			
+			e.printStackTrace();
 		}
 	}
 
 	public static void closeConnection() {
 		try {
 			conexion.close();
-			System.out.println("Se ha finalizado la conexion con el servidor");
-		} catch (SQLException ex) {
-			// no ho agafa tal com esta ara (Class.forName)
-			// Logger.getLogger((MySQL.class.getName()).log(Level.SEVERE,null,ex);
-			System.out.println(ex);
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 
