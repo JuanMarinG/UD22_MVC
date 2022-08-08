@@ -6,10 +6,13 @@ public class ClienteVista extends JFrame{
 	
 	private JPanel contentPane;
 	private JTextField textFieldIdCliente;
+
 	
 //CONSTRUCTOR VISTA
 	
 	public ClienteVista() {
+	getContentPane().setLayout (new BorderLayout());
+	
 	
 	/* Definition of the window */
 	setTitle("Cliente"); // PopUp window title
@@ -18,3 +21,4 @@ public class ClienteVista extends JFrame{
 	setVisible(true); // It allows the window to be visible
 	}
 }
+
