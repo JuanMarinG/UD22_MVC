@@ -65,8 +65,5 @@ public class ConnectionDB {
 		} catch (SQLException ex) {}
 	}
 	
-	private void deleteRecord(String nombre_tabla) {
-		
-	}
 	
 }
