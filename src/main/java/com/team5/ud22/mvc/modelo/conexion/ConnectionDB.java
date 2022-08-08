@@ -53,8 +53,12 @@ public class ConnectionDB {
 	}
 
 	public static Connection getConexion(String db) {
-		if(conexion == null)
-			openConnection(db);
+		try {
+			if(conexion == null || conexion.isClosed())
+				openConnection(db);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return conexion;
 	}
 	

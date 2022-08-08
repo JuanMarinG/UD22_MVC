@@ -16,7 +16,7 @@ public class App
         	System.out.println(c);
         }
         
-        Cliente cliente = new Cliente("marta","garcia","jshvasg","3456g","071299");
+        Cliente cliente = new Cliente("marta","garcia","jshvasg","3456g","20220712");
         cdao.insertarCliente(cliente);
     }
 }
