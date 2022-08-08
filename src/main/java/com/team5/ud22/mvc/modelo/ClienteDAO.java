@@ -34,14 +34,9 @@ public class ClienteDAO {
 			}
 			rs.close();
 			st.close();
-			conn.close();
+			ConnectionDB.closeConnection();
 		} catch(Exception e) {e.printStackTrace();}
-		// Assegurar-se que es tanca la connexió
-		if (conn!=null){
-			try {
-				conn.close();
-			} catch (Exception e){}
-		}
+		
 		return clientes;
 	}
 	
@@ -80,17 +75,17 @@ public class ClienteDAO {
 		Connection conn = null;
 		try {
 			conn = ConnectionDB.getConexion("UD22MVC");			
-			String sql = "INSERT INTO CLIENTE VALUES (?,?,?,?,?);";
+			String sql = "INSERT INTO CLIENTE(nombre,apellido,direccion,dni,fecha) VALUES (?,?,?,?,?);";
 			PreparedStatement a = conn.prepareStatement(sql);
             a.setString(1, cliente.getNombre());
             a.setString(2, cliente.getApellido());
             a.setString(3, cliente.getDireccion());
-            a.setString(1, cliente.getDni());
-            a.setString(1, cliente.getFecha());
-            a.executeUpdate();
-            ResultSet rs = a.executeQuery();         
+            a.setString(4, cliente.getDni());
+            a.setString(5, cliente.getFecha());
+            a.executeUpdate();                    
 
 			System.out.println("Datos almacenados correctamente");
+			ConnectionDB.closeConnection();
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
 			//JOptionPane.showMessageDialog(null, "Error en el almacenamiento");

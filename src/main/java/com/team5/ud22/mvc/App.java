@@ -15,5 +15,8 @@ public class App
         for(Cliente c : cdao.getClientes()) {
         	System.out.println(c);
         }
+        
+        Cliente cliente = new Cliente("marta","garcia","jshvasg","3456g","071299");
+        cdao.insertarCliente(cliente);
     }
 }
