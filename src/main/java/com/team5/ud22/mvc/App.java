@@ -1,41 +1,37 @@
 package com.team5.ud22.mvc;
 
-import com.team5.ud22.mvc.modelo.Cliente;
-import com.team5.ud22.mvc.modelo.ClienteDAO;
-import com.team5.ud22.mvc.modelo.conexion.ConnectionDB;
+import com.team5.ud22.mvc.controlador.ClienteControlador;
+import com.team5.ud22.mvc.vista.ClienteVista;
+import com.team5.ud22.mvc.vista.NuevaVista;
 
-public class App 
-{
-    public static void main( String[] args )
-    {
-    	setupDefault();
-    	
-        ClienteDAO cdao = new ClienteDAO();
-        
-        System.out.println("---ANTES---");
-        for(Cliente c : cdao.getClientes()) {
-        	System.out.println(c);
-        }        
-        
-        Cliente cliente = cdao.getCliente("3339");
-        cliente.setApellido("Vlasdel");
-        cliente.setNombre("Ionela");
-        // No es pot modificar el dni
-        cdao.actualizarCliente(cliente);
-        
-        cdao.eliminarCliente("'3456g'");
-        
-        System.out.println("\n---DESPUES---");
-        for(Cliente c : cdao.getClientes()) {
-        	System.out.println(c);
-        }
+public class App {
+	
+	ClienteControlador clienteControlador;
+	ClienteVista clienteVista;
+	NuevaVista nuevaVista;
+	
+    public static void main(String[] args) {
+    	App programa = new App();
+    	programa.start();
     }
 
-	private static void setupDefault() {
-		ConnectionDB.clear();
-		ClienteDAO cdao = new ClienteDAO();
-		cdao.insertarCliente(new Cliente("Jone","Joana","Tgn","7778","20220101"));
-		cdao.insertarCliente(new Cliente("Arnau","Mas","Alcover","3339","20020926"));
-		cdao.insertarCliente(new Cliente("Marta","garcia","Bcn","3456g","20220712"));
+	private void start() {
+		// Instanciar clases vistas
+		clienteVista = new ClienteVista();
+    	nuevaVista = new NuevaVista();
+    	
+    	// Instanciar controlador/es
+    	clienteControlador = new ClienteControlador();
+    	
+    	// Settear controlador a las vistas
+    	clienteVista.setControlador(clienteControlador);
+    	nuevaVista.setControlador(clienteControlador);
+    	
+    	// Settear vistas al controlador
+    	clienteControlador.setClienteVista(clienteVista);
+    	clienteControlador.setNuevaVista(nuevaVista);
+    	
+    	// Iniciar programa mostrando vista principal
+    	clienteVista.setVisible(true);
 	}
 }
