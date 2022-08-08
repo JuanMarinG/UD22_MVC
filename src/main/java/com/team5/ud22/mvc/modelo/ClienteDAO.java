@@ -2,6 +2,7 @@ package com.team5.ud22.mvc.modelo;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,12 +45,55 @@ public class ClienteDAO {
 	}
 	
 	// Obtener cliente por DNI
-	public Cliente getCliente(String dni) {
-		return null;
+	public Cliente getCliente(String dni){
+		Connection conn = null;
+		Cliente cliente = null;
+		try {			
+			conn = ConnectionDB.getConexion("UD22MVC");
+			String sql = "SELECT * FROM Cliente WHERE DNI iLIKE "+ dni;
+			Statement st = conn.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			if (rs.next()){
+				cliente = new Cliente(
+							rs.getString("nombre"),
+							rs.getString("apellido"),
+							rs.getString("direccion"),
+							rs.getString("dni"),
+							rs.getString("fecha")
+						);					
+			}
+			rs.close();
+			st.close();	
+			conn.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			conn = null;
+		}
+		
+		return cliente;		
 	}
 	
 	// Crear cliente
 	public void insertarCliente(Cliente cliente) {
+		Connection conn = null;
+		try {
+			conn = ConnectionDB.getConexion("UD22MVC");			
+			String sql = "INSERT INTO CLIENTE VALUES (?,?,?,?,?);";
+			prepareStatement a = conn.prepareStatement(sql);
+            a.setString(1, cliente.getNombre());
+            a.setString(2, cliente.getApellido());
+            a.setString(3, cliente.getDireccion());
+            a.setString(1, cliente.getDni());
+            a.setString(1, cliente.getFecha());
+            a.executeUpdate();
+            ResultSet rs = a.executeQuery();         
+
+			System.out.println("Datos almacenados correctamente");
+		} catch (SQLException ex) {
+			System.out.println(ex.getMessage());
+			//JOptionPane.showMessageDialog(null, "Error en el almacenamiento");
+		}
 		
 	}
 	
