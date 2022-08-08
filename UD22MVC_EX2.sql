@@ -7,6 +7,7 @@ DROP DATABASE IF EXISTS UD22_2MVC;
     nombre varchar(250) default null,
     apellido varchar(250) default null,
     direccion varchar (250) default null,
+	dni int (11) default null,
     fecha date default null,
     primary key (id)
     );
