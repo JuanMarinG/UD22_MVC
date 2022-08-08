@@ -6,7 +6,10 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
+
+import javax.swing.JOptionPane;
 
 public class ConnectionDB {
 
@@ -52,6 +55,18 @@ public class ConnectionDB {
 			e.printStackTrace();
 		}
 		return conexion;
+	}
+	
+	public static void clear() {
+		try {
+			String Query = "DELETE FROM Cliente";
+			Statement st = getConexion("UD22MVC").createStatement();
+			st.executeUpdate(Query);
+		} catch (SQLException ex) {}
+	}
+	
+	private void deleteRecord(String nombre_tabla) {
+		
 	}
 	
 }
