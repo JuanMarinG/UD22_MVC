@@ -27,7 +27,8 @@ public class App
         Cliente cliente = cdao.getCliente("3339");
         cliente.setApellido("Vlasdel");
         cliente.setNombre("Ionela");
-        cdao.actualizarCliente("3339", cliente);
+        // No es pot modificar el dni
+        cdao.actualizarCliente(cliente);
         
         System.out.println("\n---DESPUES---");
         for(Cliente c : cdao.getClientes()) {

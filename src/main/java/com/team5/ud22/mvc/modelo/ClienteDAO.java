@@ -86,8 +86,7 @@ public class ClienteDAO {
 	}
 	
 	// Actualizar cliente
-	public void actualizarCliente(String dni, Cliente cliente) {
-		Cliente c = getCliente(dni);
+	public void actualizarCliente(Cliente cliente) {
 		Connection conn = null;
 		try {
 			conn = ConnectionDB.getConexion("UD22MVC");			
@@ -104,7 +103,7 @@ public class ClienteDAO {
 			pSt.setString(3, cliente.getDireccion());
 			pSt.setString(4, cliente.getDni());
 			pSt.setString(5, cliente.getFecha());
-			pSt.setString(6, dni);
+			pSt.setString(6, cliente.getDni());
 			pSt.executeUpdate();                    
 
 			pSt.close();
