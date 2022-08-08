@@ -33,6 +33,5 @@ public class App {
     	
     	// Iniciar programa mostrando vista principal
     	clienteVista.setVisible(true);
-		
 	}
 }
