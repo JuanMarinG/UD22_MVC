@@ -45,7 +45,7 @@ public class ClienteDAO {
 		Cliente cliente = null;
 		try {			
 			conn = ConnectionDB.getConexion("UD22MVC");
-			String sql = "SELECT * FROM Cliente WHERE DNI iLIKE "+ dni;
+			String sql = "SELECT * FROM Cliente WHERE DNI LIKE "+ dni;
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(sql);
 			if (rs.next()){
@@ -87,7 +87,29 @@ public class ClienteDAO {
 	
 	// Actualizar cliente
 	public void actualizarCliente(String dni, Cliente cliente) {
-		
+		Cliente c = getCliente(dni);
+		Connection conn = null;
+		try {
+			conn = ConnectionDB.getConexion("UD22MVC");			
+			String sql = "UPDATE Cliente"
+					+ " SET nombre = ?,"
+					+ " apellido = ?,"
+					+ " direccion = ?,"
+					+ " dni = ?,"
+					+ " fecha = ?"
+					+ " WHERE dni = ?";
+			PreparedStatement pSt = conn.prepareStatement(sql);
+			pSt.setString(1, cliente.getNombre());
+			pSt.setString(2, cliente.getApellido());
+			pSt.setString(3, cliente.getDireccion());
+			pSt.setString(4, cliente.getDni());
+			pSt.setString(5, cliente.getFecha());
+			pSt.setString(6, dni);
+			pSt.executeUpdate();                    
+
+			pSt.close();
+			ConnectionDB.closeConnection();
+		} catch(Exception e) {e.printStackTrace();} 
 	}
 	
 	// Eliminar cliente
@@ -95,7 +117,7 @@ public class ClienteDAO {
 		Connection conn = null;
 		try {
 			conn = ConnectionDB.getConexion("UD22MVC");	
-			String sql = "DELETE FROM Cliente WHERE DNI iLIKE " + dni;
+			String sql = "DELETE FROM Cliente WHERE DNI LIKE " + dni;
 			Statement st = conn.createStatement();
 			st.executeUpdate(sql);
 
