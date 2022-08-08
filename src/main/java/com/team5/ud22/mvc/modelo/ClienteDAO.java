@@ -3,7 +3,6 @@ package com.team5.ud22.mvc.modelo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,12 +59,8 @@ public class ClienteDAO {
 			}
 			rs.close();
 			st.close();	
-			conn.close();
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-			conn = null;
-		}
+			ConnectionDB.closeConnection();
+		} catch(Exception e) {e.printStackTrace();} 
 		
 		return cliente;		
 	}
@@ -76,20 +71,17 @@ public class ClienteDAO {
 		try {
 			conn = ConnectionDB.getConexion("UD22MVC");			
 			String sql = "INSERT INTO CLIENTE(nombre,apellido,direccion,dni,fecha) VALUES (?,?,?,?,?);";
-			PreparedStatement a = conn.prepareStatement(sql);
-            a.setString(1, cliente.getNombre());
-            a.setString(2, cliente.getApellido());
-            a.setString(3, cliente.getDireccion());
-            a.setString(4, cliente.getDni());
-            a.setString(5, cliente.getFecha());
-            a.executeUpdate();                    
+			PreparedStatement pSt = conn.prepareStatement(sql);
+			pSt.setString(1, cliente.getNombre());
+			pSt.setString(2, cliente.getApellido());
+			pSt.setString(3, cliente.getDireccion());
+			pSt.setString(4, cliente.getDni());
+			pSt.setString(5, cliente.getFecha());
+			pSt.executeUpdate();                    
 
-			System.out.println("Datos almacenados correctamente");
+			pSt.close();
 			ConnectionDB.closeConnection();
-		} catch (SQLException ex) {
-			System.out.println(ex.getMessage());
-			//JOptionPane.showMessageDialog(null, "Error en el almacenamiento");
-		}
+		} catch(Exception e) {e.printStackTrace();} 
 		
 	}
 	
@@ -100,84 +92,16 @@ public class ClienteDAO {
 	
 	// Eliminar cliente
 	public void eliminarCliente(String dni) {
-		
-	}
+		Connection conn = null;
+		try {
+			conn = ConnectionDB.getConexion("UD22MVC");	
+			String sql = "DELETE FROM Cliente WHERE DNI iLIKE " + dni;
+			Statement st = conn.createStatement();
+			st.executeUpdate(sql);
+
+			st.close();
+			ConnectionDB.closeConnection();
+		} catch(Exception e) {e.printStackTrace();} 
+	}	
 	
-	/*
-	// INSERTAR DATOS EN TABLAS MYSQL
-		public void insertData(String db, String nombre_tabla, String campos) {
-			try {
-				String Querydb = "USE " + db + ";";
-				Statement stdb = conexion.createStatement();
-				stdb.executeUpdate(Querydb);
-
-				String Query = "REPLACE INTO " + nombre_tabla + " " + campos; // TENER EN CUENTA QUE INSERTA I TAMBIEN HACE UPDATE SI JA EXISTE
-
-				Statement st = conexion.createStatement();
-				st.executeUpdate(Query);
-
-				System.out.println("Datos almacenados correctamente");
-			} catch (SQLException ex) {
-				System.out.println(ex.getMessage());
-				JOptionPane.showMessageDialog(null, "Error en el almacenamiento");
-			}
-		}
-
-		// OBTENER VALORES MYSQL
-		public void getValues(String db, String nombre_tabla) {
-			try {
-				String Querydb = "USE " + db + ";";
-				Statement stdb = conexion.createStatement();
-				stdb.executeUpdate(Querydb);
-
-				String Query = "SELECT * FROM " + nombre_tabla;
-				Statement st = conexion.createStatement();
-				ResultSet resultSet;
-				resultSet = st.executeQuery(Query);
-
-				System.out.println("### "+nombre_tabla+" ###");
-				while (resultSet.next()) {
-					for(int i=1;i>0;i++) {
-						try {
-							resultSet.getString(i);
-						}catch(Exception e) {
-							break;
-						}
-						System.out.print(resultSet.getString(i) + " | ");
-					}
-					System.out.println("");
-				}
-			} catch (SQLException e) {
-				System.out.println(e.getMessage());
-			}
-
-		}
-
-		//METODO ELIMINA VALORES DE DB
-
-		public void deleteRecord(String nombre_tabla, String ID) {
-			try {
-				String Query = "DELETE FROM " + nombre_tabla + "WHERE ID " + ID + "\"";
-				Statement st = conexion.createStatement();
-				st.executeUpdate(Query);
-
-			} catch (SQLException ex) {
-				System.out.println(ex.getMessage());
-				JOptionPane.showMessageDialog(null, "Error borrando el registro especificado");
-			}
-		}
-		
-		public void dropElement(String tipoElement,String element) {
-			try {
-				String Query = "DROP " + tipoElement + " IF EXISTS" + element;
-				Statement st = conexion.createStatement();
-				st.executeUpdate(Query);
-				
-			}catch(SQLException ex) {
-				System.out.println(ex.getMessage());
-				JOptionPane.showMessageDialog(null, "Error borrando el registro especificado");
-			}
-			
-		}
-	 */
 }
