@@ -1,7 +1,6 @@
 package com.team5.ud22.mvc.modelo;
 
 public class Cliente {
-	private int id;
 	private String nombre;
 	private String apellido;
 	private String direccion;
@@ -10,8 +9,7 @@ public class Cliente {
 	
 	public Cliente() {}
 	
-	public Cliente(int id, String nombre, String apellido, String direccion, String dni, String fecha) {
-		this.id = id;
+	public Cliente(String nombre, String apellido, String direccion, String dni, String fecha) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.direccion = direccion;
@@ -19,12 +17,6 @@ public class Cliente {
 		this.fecha = fecha;
 	}
 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -54,6 +46,12 @@ public class Cliente {
 	}
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion + ", dni=" + dni
+				+ ", fecha=" + fecha + "]";
 	}
 	
 	

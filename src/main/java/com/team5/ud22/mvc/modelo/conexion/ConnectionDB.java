@@ -13,15 +13,15 @@ import javax.swing.JOptionPane;
 
 public class ConnectionDB {
 
-	private Connection conexion;
+	private static Connection conexion = null;
 
-	public void openConnection() {
+	private static void openConnection(String db) {
 
 		String user = "", password = "";
-		String urlBaseDades = "jdbc:mysql://localhost:3306?useTimezone=true&serverTimezone=UTC";
+		String urlBaseDades = "jdbc:mysql://localhost:3306/"+db+"?useTimezone=true&serverTimezone=UTC";
 
 		// Carregar user i password
-		try (InputStream input = new FileInputStream("src/connectionDB/login.properties")) {
+		try (InputStream input = new FileInputStream("src/main/java/com/team5/ud22/mvc/modelo/conexion/login.properties")) {
 			Properties prop = new Properties();
 			prop.load(input);
 			user = prop.getProperty("user");
@@ -41,7 +41,7 @@ public class ConnectionDB {
 		}
 	}
 
-	public void closeConnection() {
+	public static void closeConnection() {
 		try {
 			conexion.close();
 			System.out.println("Se ha finalizado la conexion con el servidor");
@@ -52,109 +52,10 @@ public class ConnectionDB {
 		}
 	}
 
-	public void createDB(String name) {
-		try {
-			if (conexion == null)
-				openConnection();
-			String Query = "CREATE DATABASE " + name;
-			Statement st = conexion.createStatement();
-			st.executeUpdate(Query);
-			System.out.println("Se ha creado la base de datos " + name + " de forma exitosa.");
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			System.out.println("Error creando DB.");
-		}
-	}
-
-	public void createTable(String db, String name, String campos) {
-		try {
-			String Querydb = "USE " + db + ";";
-			Statement stdb = conexion.createStatement();
-			stdb.executeUpdate(Querydb);
-
-			String Query = "CREATE TABLE " + name + " " + campos;
-			Statement st = conexion.createStatement();
-			st.executeUpdate(Query);
-			System.out.println("Tabla creada con exito!");
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			System.out.println("Error creando tabla.");
-		}
-	}
-
-	// INSERTAR DATOS EN TABLAS MYSQL
-	public void insertData(String db, String nombre_tabla, String campos) {
-		try {
-			String Querydb = "USE " + db + ";";
-			Statement stdb = conexion.createStatement();
-			stdb.executeUpdate(Querydb);
-
-			String Query = "REPLACE INTO " + nombre_tabla + " " + campos; // TENER EN CUENTA QUE INSERTA I TAMBIEN HACE UPDATE SI JA EXISTE
-
-			Statement st = conexion.createStatement();
-			st.executeUpdate(Query);
-
-			System.out.println("Datos almacenados correctamente");
-		} catch (SQLException ex) {
-			System.out.println(ex.getMessage());
-			JOptionPane.showMessageDialog(null, "Error en el almacenamiento");
-		}
-	}
-
-	// OBTENER VALORES MYSQL
-	public void getValues(String db, String nombre_tabla) {
-		try {
-			String Querydb = "USE " + db + ";";
-			Statement stdb = conexion.createStatement();
-			stdb.executeUpdate(Querydb);
-
-			String Query = "SELECT * FROM " + nombre_tabla;
-			Statement st = conexion.createStatement();
-			ResultSet resultSet;
-			resultSet = st.executeQuery(Query);
-
-			System.out.println("### "+nombre_tabla+" ###");
-			while (resultSet.next()) {
-				for(int i=1;i>0;i++) {
-					try {
-						resultSet.getString(i);
-					}catch(Exception e) {
-						break;
-					}
-					System.out.print(resultSet.getString(i) + " | ");
-				}
-				System.out.println("");
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-
-	}
-
-	//METODO ELIMINA VALORES DE DB
-
-	public void deleteRecord(String nombre_tabla, String ID) {
-		try {
-			String Query = "DELETE FROM " + nombre_tabla + "WHERE ID " + ID + "\"";
-			Statement st = conexion.createStatement();
-			st.executeUpdate(Query);
-
-		} catch (SQLException ex) {
-			System.out.println(ex.getMessage());
-			JOptionPane.showMessageDialog(null, "Error borrando el registro especificado");
-		}
+	public static Connection getConexion(String db) {
+		if(conexion == null)
+			openConnection(db);
+		return conexion;
 	}
 	
-	public void dropElement(String tipoElement,String element) {
-		try {
-			String Query = "DROP " + tipoElement + " IF EXISTS" + element;
-			Statement st = conexion.createStatement();
-			st.executeUpdate(Query);
-			
-		}catch(SQLException ex) {
-			System.out.println(ex.getMessage());
-			JOptionPane.showMessageDialog(null, "Error borrando el registro especificado");
-		}
-		
-	}
 }
