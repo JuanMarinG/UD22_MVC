@@ -54,5 +54,4 @@ public class Cliente {
 				+ ", fecha=" + fecha + "]";
 	}
 	
-	
 }

@@ -9,8 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-import javax.swing.JOptionPane;
-
 public class ConnectionDB {
 
 	private static Connection conexion = null;
@@ -64,6 +62,5 @@ public class ConnectionDB {
 			st.executeUpdate(Query);
 		} catch (SQLException ex) {}
 	}
-	
-	
+		
 }
