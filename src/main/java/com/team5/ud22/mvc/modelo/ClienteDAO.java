@@ -1,6 +1,7 @@
 package com.team5.ud22.mvc.modelo;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -80,7 +81,7 @@ public class ClienteDAO {
 		try {
 			conn = ConnectionDB.getConexion("UD22MVC");			
 			String sql = "INSERT INTO CLIENTE VALUES (?,?,?,?,?);";
-			prepareStatement a = conn.prepareStatement(sql);
+			PreparedStatement a = conn.prepareStatement(sql);
             a.setString(1, cliente.getNombre());
             a.setString(2, cliente.getApellido());
             a.setString(3, cliente.getDireccion());
