@@ -21,3 +21,4 @@ public class ClienteControlador {
 		clienteVista.setVisible(estado);
 	}
 }
+
