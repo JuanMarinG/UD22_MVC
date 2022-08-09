@@ -21,7 +21,7 @@ public class App {
     	clienteControlador = new ClienteControlador();
     	
     	// Settear controlador a las vistas - NO ES NECESARIO
-    	//clienteVista.setControlador(clienteControlador);
+    	clienteVista.setControlador(clienteControlador);
     	
     	// Settear vistas al controlador -- ESTE SI QUE ES NECESARIO
     	clienteControlador.setClienteVista(clienteVista);
