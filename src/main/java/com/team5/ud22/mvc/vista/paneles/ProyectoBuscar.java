@@ -13,6 +13,8 @@ public class ProyectoBuscar extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JTextField txtNombre;
 	private JTextField txtID;
+	private JButton btnOK;
+	private JTextArea txtResultInfo;
    
     public ProyectoBuscar(){
     	setLayout(null);
@@ -37,16 +39,48 @@ public class ProyectoBuscar extends JPanel {
     	txtID.setBounds(28, 167, 125, 20);
     	add(txtID);
     	
-    	JButton btnBusqueda = new JButton("OK");
-    	btnBusqueda.setBounds(198, 296, 89, 23);
-    	add(btnBusqueda);
+    	btnOK = new JButton("OK");
+    	btnOK.setBounds(198, 296, 89, 23);
+    	add(btnOK);
     	
-    	JTextArea txtResultInfo = new JTextArea();
+    	txtResultInfo = new JTextArea();
     	txtResultInfo.setText("Se actualizara con el \r\nresultado de la busqueda");
     	txtResultInfo.setEditable(false);
     	txtResultInfo.setBounds(233, 24, 243, 241);
     	add(txtResultInfo);
-    	
-    	
+    	    	
     }
+    
+    public JTextField getTxtNombre() {
+		return txtNombre;
+	}
+
+	public void setTxtNombre(JTextField txtNombre) {
+		this.txtNombre = txtNombre;
+	}
+
+	public JTextField getTxtID() {
+		return txtID;
+	}
+
+	public void setTxtID(JTextField txtID) {
+		this.txtID = txtID;
+	}
+
+	public JButton getBtnOK() {
+		return btnOK;
+	}
+
+	public void setBtnOK(JButton btnOK) {
+		this.btnOK = btnOK;
+	}
+
+	public JTextArea getTxtResultInfo() {
+		return txtResultInfo;
+	}
+
+	public void setTxtResultInfo(JTextArea txtResultInfo) {
+		this.txtResultInfo = txtResultInfo;
+	}
+
 }
