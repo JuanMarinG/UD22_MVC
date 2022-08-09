@@ -1,22 +1,13 @@
 package com.team5.ud22.mvc;
 
-import com.team5.ud22.mvc.controlador.ClienteControlador;
-import com.team5.ud22.mvc.vista.ClienteVista;
+import com.team5.ud22.mvc.controlador.Ex1Controlador;
+import com.team5.ud22.mvc.controlador.Ex3Controlador;
 
 public class App {
 	
-	ClienteControlador clienteControlador;
-	ClienteVista clienteVista;
-	
     public static void main(String[] args) {
-    	App programa = new App();
-    	programa.start();
+    	// Instanciar controlador
+    	new Ex3Controlador();
     }
 
-	private void start() {		
-    	
-    	// Instanciar controlador/es
-    	clienteControlador = new ClienteControlador();   	
-    	
-	}
 }
