@@ -55,10 +55,10 @@ public class ConnectionDB {
 		return conexion;
 	}
 	
-	public static void clear() {
+	public static void clear(String db) {
 		try {
 			String Query = "DELETE FROM Cliente";
-			Statement st = getConexion("UD22MVC").createStatement();
+			Statement st = getConexion(db).createStatement();
 			st.executeUpdate(Query);
 		} catch (SQLException ex) {}
 	}
