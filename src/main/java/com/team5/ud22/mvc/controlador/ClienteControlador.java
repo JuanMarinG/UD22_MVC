@@ -5,9 +5,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import com.team5.ud22.mvc.modelo.util.Data;
 import com.team5.ud22.mvc.vista.ClienteVista;
 
-import Utilities.Data;
 
 public class ClienteControlador implements ActionListener{
 	
