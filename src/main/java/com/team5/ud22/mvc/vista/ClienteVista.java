@@ -60,11 +60,11 @@ public class ClienteVista extends JFrame {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 
-		JButton btnNewButton = new JButton("Nuevo");
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton.setBounds(28, 128, 89, 23);
-		contentPane.add(btnNewButton);
-		btnNewButton.addActionListener(controlador);
+		JButton btnNuevo = new JButton("Nuevo");
+		btnNuevo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnNuevo.setBounds(28, 128, 89, 23);
+		contentPane.add(btnNuevo);
+		btnNuevo.addActionListener(controlador);
 		/*
 		btnNewButton.addActionListener(e -> {			
 			panel.removeAll();
@@ -78,10 +78,10 @@ public class ClienteVista extends JFrame {
 		*/
 		
 
-		JButton btnNewButton_2 = new JButton("Modificar");
-		btnNewButton_2.setBounds(27, 167, 89, 23);
-		contentPane.add(btnNewButton_2);
-		btnNewButton_2.addActionListener(controlador);
+		JButton btnModificar = new JButton("Modificar");
+		btnModificar.setBounds(27, 167, 89, 23);
+		contentPane.add(btnModificar);
+		btnModificar.addActionListener(controlador);
 		/*
 		btnNewButton_2.addActionListener(e -> {
 			panel.removeAll();
@@ -94,10 +94,10 @@ public class ClienteVista extends JFrame {
 		});
 		*/
 		
-		JButton btnNewButton_1 = new JButton("Salir");
-		btnNewButton_1.setBounds(28, 347, 89, 23);
-		contentPane.add(btnNewButton_1);
-		btnNewButton_1.addActionListener(controlador);
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.setBounds(28, 347, 89, 23);
+		contentPane.add(btnSalir);
+		btnSalir.addActionListener(controlador);
 		/*
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -109,10 +109,10 @@ public class ClienteVista extends JFrame {
 		
 		
 
-		JButton btnNewButton_3 = new JButton("Eliminar");
-		btnNewButton_3.setBounds(28, 201, 89, 23);
-		contentPane.add(btnNewButton_3);
-		btnNewButton_3.addActionListener(controlador);
+		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(28, 201, 89, 23);
+		contentPane.add(btnEliminar);
+		btnEliminar.addActionListener(controlador);
 		/*
 		btnNewButton_3.addActionListener(e -> {
 			panel.removeAll();
@@ -127,10 +127,10 @@ public class ClienteVista extends JFrame {
 		
 		
 
-		JButton btnNewButton_4 = new JButton("Buscar...");
-		btnNewButton_4.setBounds(28, 69, 89, 23);
-		contentPane.add(btnNewButton_4);
-		btnNewButton_4.addActionListener(controlador);
+		JButton btnBuscar = new JButton("Buscar...");
+		btnBuscar.setBounds(28, 69, 89, 23);
+		contentPane.add(btnBuscar);
+		btnBuscar.addActionListener(controlador);
 		/*
 		btnNewButton_4.addActionListener(e -> {
 			panel.removeAll();
@@ -143,11 +143,11 @@ public class ClienteVista extends JFrame {
 		});
 		*/
 
-		JLabel lblNewLabel = new JLabel("CLIENTES");
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel.setBounds(34, 11, 83, 23);
-		contentPane.add(lblNewLabel);
+		JLabel lblTitulo = new JLabel("CLIENTES");
+		lblTitulo.setForeground(new Color(255, 255, 255));
+		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblTitulo.setBounds(34, 11, 83, 23);
+		contentPane.add(lblTitulo);
 
 		JSeparator separator = new JSeparator();
 		separator.setBounds(10, 45, 155, 2);
@@ -161,7 +161,7 @@ public class ClienteVista extends JFrame {
 		separator_1_1.setBounds(10, 333, 155, 2);
 		contentPane.add(separator_1_1);
 
-		 panel = new JPanel();
+		panel = new JPanel();
 		panel.setBounds(173, 11, 501, 359);
 		contentPane.add(panel);
 		panel.setLayout(new CardLayout(0, 0));
