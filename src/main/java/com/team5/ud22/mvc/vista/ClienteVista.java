@@ -20,7 +20,7 @@ import java.awt.CardLayout;
 public class ClienteVista extends JFrame {
 
 	// ATTRIBUTES
-	//private ClienteControlador controlador; NO HACE FALTA YA QUE EL ULTIMO METODO NO ES NECESARIO
+	private ClienteControlador controlador; 
 	protected static final Container content = null;
 	public JButton consultar, insertar, eliminar, modificar;
 	public JLabel consulta;
@@ -157,10 +157,10 @@ public class ClienteVista extends JFrame {
 
 	}
 	
-	/* NO ES NECESARIO 
+	
 	//Metodo para settear el controlador 
 	public void setControlador(ClienteControlador controlador) {
 		this.controlador = controlador;
 	}
-	*/
+	
 }

@@ -20,10 +20,10 @@ public class App {
     	// Instanciar controlador/es
     	clienteControlador = new ClienteControlador();
     	
-    	// Settear controlador a las vistas - NO ES NECESARIO
-    	//clienteVista.setControlador(clienteControlador);
+    	// Settear controlador a las vistas 
+    	clienteVista.setControlador(clienteControlador);
     	
-    	// Settear vistas al controlador -- ESTE SI QUE ES NECESARIO
+    	// Settear vistas al controlador 
     	clienteControlador.setClienteVista(clienteVista);
     	
     	// Iniciar programa mostrando vista principal    	
