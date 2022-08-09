@@ -17,7 +17,7 @@ public class CientificoDAO {
 		List<Cientifico> cientificos = new ArrayList<Cientifico>();
 		Connection conn = null;
 		try {
-			conn = ConnectionDB.getConexion("UD22MVC");
+			conn = ConnectionDB.getConexion("UD22_3MVC");
 			String sql = "SELECT * FROM Cientificos";
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(sql);
@@ -42,7 +42,7 @@ public class CientificoDAO {
 		Connection conn = null;
 		Cientifico cientifico = null;
 		try {			
-			conn = ConnectionDB.getConexion("UD22MVC");
+			conn = ConnectionDB.getConexion("UD22_3MVC");
 			String sql = "SELECT * FROM Cientificos WHERE DNI LIKE "+ dni;
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(sql);
@@ -64,7 +64,7 @@ public class CientificoDAO {
 	public void insertarCientifico(Cientifico cientifico) {
 		Connection conn = null;
 		try {
-			conn = ConnectionDB.getConexion("UD22MVC");			
+			conn = ConnectionDB.getConexion("UD22_3MVC");			
 			String sql = "INSERT INTO Cientificos VALUES (?,?)";
 			PreparedStatement pSt = conn.prepareStatement(sql);
 			pSt.setString(1, cientifico.getDni());
@@ -81,7 +81,7 @@ public class CientificoDAO {
 	public void actualizarCientifico(Cientifico cientifico) {
 		Connection conn = null;
 		try {
-			conn = ConnectionDB.getConexion("UD22MVC");			
+			conn = ConnectionDB.getConexion("UD22_3MVC");			
 			String sql = "UPDATE Cientificos"
 					+ " NomApels = ?,"
 					+ " WHERE DNI = ?";
@@ -99,7 +99,7 @@ public class CientificoDAO {
 	public void eliminarCientifico(String dni) {
 		Connection conn = null;
 		try {
-			conn = ConnectionDB.getConexion("UD22MVC");	
+			conn = ConnectionDB.getConexion("UD22_3MVC");	
 			String sql = "DELETE FROM Cientificos WHERE DNI LIKE " + dni;
 			Statement st = conn.createStatement();
 			st.executeUpdate(sql);
