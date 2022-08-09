@@ -19,26 +19,6 @@ public class ClienteVista extends JFrame {
 	// ATTRIBUTES
 	protected static final Container content = null;
 	private JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir;
-	public JButton getBtnNuevo() {
-		return btnNuevo;
-	}
-
-	public JButton getBtnModificar() {
-		return btnModificar;
-	}
-
-	public JButton getBtnEliminar() {
-		return btnEliminar;
-	}
-
-	public JButton getBtnBuscar() {
-		return btnBuscar;
-	}
-
-	public JButton getBtnSalir() {
-		return btnSalir;
-	}
-
 	public JLabel consulta;
 	private JPanel contentPane;
 	
@@ -147,4 +127,23 @@ public class ClienteVista extends JFrame {
 		return cBuscar;
 	}
 	
+	public JButton getBtnNuevo() {
+		return btnNuevo;
+	}
+
+	public JButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+	public JButton getBtnSalir() {
+		return btnSalir;
+	}
 }
