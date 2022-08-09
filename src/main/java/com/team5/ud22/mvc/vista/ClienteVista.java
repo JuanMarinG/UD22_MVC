@@ -39,7 +39,7 @@ public class ClienteVista extends JFrame {
 	public JLabel consulta;
 	private JPanel contentPane;
 	
-	private JPanel panel,panel_1,panel_2;
+	private JPanel panel,panel_1,panel_2,panel_3,panel_4;
 
 	// CONSTRUCTOR VISTA
 
@@ -55,11 +55,20 @@ public class ClienteVista extends JFrame {
 		// PANELS
 		panel_1 = new JPanel();
 		panel_2 = new JPanel();
+		panel_3 = new JPanel();
+		panel_4 = new JPanel();
 		
 		panel_1.setBackground(Color.blue);
 		panel_1.setPreferredSize(new Dimension(300, 40));
+		
 		panel_2.setBackground(Color.yellow);
 		panel_2.setPreferredSize(new Dimension(300, 40));
+		
+		panel_3.setBackground(Color.BLACK);
+		panel_3.setPreferredSize(new Dimension(300, 40));
+		
+		panel_4.setBackground(Color.GREEN);
+		panel_4.setPreferredSize(new Dimension(300, 40));
 
 		/* Creation and added the panel to the window */
 		contentPane = new JPanel();
@@ -68,6 +77,9 @@ public class ClienteVista extends JFrame {
 		setContentPane(contentPane);
 
 		JButton btnNewButton = new JButton("Nuevo");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnNewButton.setBounds(28, 128, 89, 23);
+		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(e -> {
 			//controlador.cambiarVistaNueva();
 			panel.removeAll();
@@ -79,25 +91,62 @@ public class ClienteVista extends JFrame {
 			panel.revalidate();
 		});
 		
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton.setBounds(28, 128, 89, 23);
-		contentPane.add(btnNewButton);
 
 		JButton btnNewButton_2 = new JButton("Modificar");
 		btnNewButton_2.setBounds(27, 167, 89, 23);
 		contentPane.add(btnNewButton_2);
+		btnNewButton_2.addActionListener(e -> {
+			//controlador.cambiarVistaNueva();
+			panel.removeAll();
+			panel.repaint();
+			panel.revalidate();
+			
+			panel.add(panel_2);
+			panel.repaint();
+			panel.revalidate();
+		});
 
 		JButton btnNewButton_1 = new JButton("Salir");
 		btnNewButton_1.setBounds(28, 347, 89, 23);
 		contentPane.add(btnNewButton_1);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		
+		
+		
 
 		JButton btnNewButton_3 = new JButton("Eliminar");
 		btnNewButton_3.setBounds(28, 201, 89, 23);
 		contentPane.add(btnNewButton_3);
+		btnNewButton_3.addActionListener(e -> {
+			//controlador.cambiarVistaNueva();
+			panel.removeAll();
+			panel.repaint();
+			panel.revalidate();
+			
+			panel.add(panel_3);
+			panel.repaint();
+			panel.revalidate();
+		});
+		
+		
 
 		JButton btnNewButton_4 = new JButton("Buscar...");
 		btnNewButton_4.setBounds(28, 69, 89, 23);
 		contentPane.add(btnNewButton_4);
+		btnNewButton_4.addActionListener(e -> {
+			//controlador.cambiarVistaNueva();
+			panel.removeAll();
+			panel.repaint();
+			panel.revalidate();
+			
+			panel.add(panel_4);
+			panel.repaint();
+			panel.revalidate();
+		});
 
 		JLabel lblNewLabel = new JLabel("CLIENTES");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
@@ -122,11 +171,6 @@ public class ClienteVista extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 		
-		JPanel panel_1 = new JPanel();
-		panel.add(panel_1, "name_1136427152841300");
-		
-		JPanel panel_2 = new JPanel();
-		panel.add(panel_2, "name_1136432303623300");
 
 	}
 	
