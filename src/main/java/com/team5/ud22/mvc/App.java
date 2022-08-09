@@ -13,20 +13,10 @@ public class App {
     	programa.start();
     }
 
-	private void start() {
-		// Instanciar clase vista
-		//clienteVista = new ClienteVista();
+	private void start() {		
     	
     	// Instanciar controlador/es
-    	clienteControlador = new ClienteControlador();
+    	clienteControlador = new ClienteControlador();   	
     	
-    	// Settear controlador a las vistas - NO ES NECESARIO
-    	//clienteVista.setControlador(clienteControlador);
-    	
-    	// Settear vistas al controlador -- ESTE SI QUE ES NECESARIO
-    	//clienteControlador.setClienteVista(clienteVista);
-    	
-    	// Iniciar programa mostrando vista principal    	
-    	//clienteControlador.visibilityVistaCliente(true);
 	}
 }
