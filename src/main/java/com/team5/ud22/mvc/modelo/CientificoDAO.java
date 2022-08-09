@@ -38,7 +38,7 @@ public class CientificoDAO {
 	}
 	
 	// Obtener cientifico por DNI
-	public Cientifico getCientifico(String dni){
+	public static Cientifico getCientifico(String dni){
 		Connection conn = null;
 		Cientifico cientifico = null;
 		try {			

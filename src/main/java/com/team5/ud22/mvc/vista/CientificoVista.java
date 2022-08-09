@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
+
+import com.team5.ud22.mvc.vista.paneles.CientificoBuscar;
 import com.team5.ud22.mvc.vista.paneles.PanelTest;
 import java.awt.Color;
 import java.awt.Container;
@@ -21,7 +23,7 @@ public class CientificoVista extends JFrame {
 	public JLabel consulta;
 	private JPanel contentPane;
 	
-	private JPanel panelForms,cNuevo,cModificar,cEliminar,cBuscar;
+	private JPanel panelForms,cNuevo,cBuscar;
 
 	// CONSTRUCTOR VISTA
 	
@@ -47,18 +49,10 @@ public class CientificoVista extends JFrame {
 		panelForms.setLayout(new CardLayout(0, 0));
 		
 		cNuevo = new PanelTest();
-		cModificar = new JPanel();
-		cEliminar = new JPanel();
-		cBuscar = new JPanel();
+		cBuscar = new CientificoBuscar();
 		
 		cNuevo.setBackground(Color.blue);
 		cNuevo.setPreferredSize(new Dimension(300, 40));
-		
-		cModificar.setBackground(Color.yellow);
-		cModificar.setPreferredSize(new Dimension(300, 40));
-		
-		cEliminar.setBackground(Color.BLACK);
-		cEliminar.setPreferredSize(new Dimension(300, 40));
 		
 		cBuscar.setBackground(Color.GREEN);
 		cBuscar.setPreferredSize(new Dimension(300, 40));
@@ -114,14 +108,6 @@ public class CientificoVista extends JFrame {
 	
 	public JPanel getcNuevo() {
 		return cNuevo;
-	}
-
-	public JPanel getcModificar() {
-		return cModificar;
-	}
-
-	public JPanel getcEliminar() {
-		return cEliminar;
 	}
 
 	public JPanel getcBuscar() {

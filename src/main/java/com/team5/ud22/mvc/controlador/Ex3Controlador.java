@@ -1,13 +1,18 @@
 package com.team5.ud22.mvc.controlador;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import com.team5.ud22.mvc.modelo.Cientifico;
+import com.team5.ud22.mvc.modelo.CientificoDAO;
 import com.team5.ud22.mvc.vista.CientificoVista;
 import com.team5.ud22.mvc.vista.ClienteVista;
+import com.team5.ud22.mvc.vista.paneles.CientificoBuscar;
 
 
 public class Ex3Controlador implements ActionListener{
@@ -19,33 +24,21 @@ public class Ex3Controlador implements ActionListener{
 		cientificoVista = new CientificoVista();
 		cientificoVista.setVisible(true);
 		afegirListenersBotons();
+		changePanelForm(cientificoVista.getcBuscar());
 	}
 	
 	private void afegirListenersBotons() {
-		cientificoVista.getBtnBuscar().addActionListener(this);
-		cientificoVista.getBtnEliminar().addActionListener(this);
-		cientificoVista.getBtnModificar().addActionListener(this);
-		cientificoVista.getBtnNuevo().addActionListener(this);
-		cientificoVista.getBtnSalir().addActionListener(this);
+		((CientificoBuscar) cientificoVista.getcBuscar()).getBtnBuscarCientifico().addActionListener(this);;
     }
 	
 	@Override
-	public void actionPerformed(ActionEvent e) {		
+	public void actionPerformed(ActionEvent e) {
 		switch(e.getActionCommand()) {
-		case "Nuevo":
-			changePanelForm(cientificoVista.getcNuevo());
-			break;
-		case "Modificar":
-			changePanelForm(cientificoVista.getcModificar());
-			break;
-		case "Salir":
-			cientificoVista.dispose();
-			break;
-		case "Eliminar":
-			changePanelForm(cientificoVista.getcEliminar());
-			break;
-		case "Buscar...":
-			changePanelForm(cientificoVista.getcBuscar());
+		case "BUSCAR":
+			String dni = ((CientificoBuscar) cientificoVista.getcBuscar()).getDni();
+			Cientifico c = CientificoDAO.getCientifico(dni);
+			// Canviar-ho per poder eliminar cientific o modificar
+			JOptionPane.showMessageDialog(null, c!=null ? c.toString() : "No se ha encontrado el cientifico");
 			break;
 		default:
 			JOptionPane.showMessageDialog(null, "ERROR");

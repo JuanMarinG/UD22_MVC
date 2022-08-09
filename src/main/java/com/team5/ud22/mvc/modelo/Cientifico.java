@@ -24,6 +24,6 @@ public class Cientifico {
 	}
 	@Override
 	public String toString() {
-		return "Cientifico [dni=" + dni + ", nomApels=" + nomApels + "]";
+		return nomApels+"\n"+dni;
 	}
 }
