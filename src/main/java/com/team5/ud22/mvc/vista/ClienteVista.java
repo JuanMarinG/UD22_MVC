@@ -5,9 +5,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JSeparator;
 import com.team5.ud22.mvc.controlador.ClienteControlador;
 import com.team5.ud22.mvc.vista.paneles.PanelTest;
@@ -67,6 +64,8 @@ public class ClienteVista extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton.setBounds(28, 128, 89, 23);
 		contentPane.add(btnNewButton);
+		btnNewButton.addActionListener(controlador);
+		/*
 		btnNewButton.addActionListener(e -> {			
 			panel.removeAll();
 			panel.repaint();
@@ -76,11 +75,14 @@ public class ClienteVista extends JFrame {
 			panel.repaint();
 			panel.revalidate();
 		});
+		*/
 		
 
 		JButton btnNewButton_2 = new JButton("Modificar");
 		btnNewButton_2.setBounds(27, 167, 89, 23);
 		contentPane.add(btnNewButton_2);
+		btnNewButton_2.addActionListener(controlador);
+		/*
 		btnNewButton_2.addActionListener(e -> {
 			panel.removeAll();
 			panel.repaint();
@@ -90,7 +92,8 @@ public class ClienteVista extends JFrame {
 			panel.repaint();
 			panel.revalidate();
 		});
-
+		*/
+		
 		JButton btnNewButton_1 = new JButton("Salir");
 		btnNewButton_1.setBounds(28, 347, 89, 23);
 		contentPane.add(btnNewButton_1);
