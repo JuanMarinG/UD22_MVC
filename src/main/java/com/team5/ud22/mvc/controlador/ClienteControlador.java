@@ -3,12 +3,17 @@ package com.team5.ud22.mvc.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import com.team5.ud22.mvc.vista.ClienteVista;
+
+import Utilities.Data;
 
 public class ClienteControlador implements ActionListener{
 	
 	// VISTAS //
 	private ClienteVista clienteVista;
+	private Data utils;
 	
 	// GETTERS y SETTERS //
 	public ClienteVista getClienteVista() {
@@ -26,7 +31,25 @@ public class ClienteControlador implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		switch(e.getActionCommand()) {
+		case "Nuevo":
+			
+			break;
+		case "Modificar":
+			
+			break;
+		case "Salir":
+			
+			break;
+		case "Eliminar":
 		
+			break;
+		case "Buscar...":
+			
+			break;
+		default:
+			JOptionPane.showMessageDialog(null, "ERROR");
+		}
+				
 	}
 }
