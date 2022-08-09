@@ -23,7 +23,7 @@ public class ClienteVista extends JFrame {
 	public JLabel consulta;
 	private JPanel contentPane;
 	
-	private JPanel panel,panel_1,panel_2,panel_3,panel_4;
+	private JPanel panel,cNuevo,cModificar,cEliminar,cBuscar;
 
 	// CONSTRUCTOR VISTA
 
@@ -37,22 +37,22 @@ public class ClienteVista extends JFrame {
 		
 		
 		// PANELS
-		panel_1 = new PanelTest();
-		panel_2 = new JPanel();
-		panel_3 = new JPanel();
-		panel_4 = new JPanel();
+		cNuevo = new PanelTest();
+		cModificar = new JPanel();
+		cEliminar = new JPanel();
+		cBuscar = new JPanel();
 		
-		panel_1.setBackground(Color.blue);
-		panel_1.setPreferredSize(new Dimension(300, 40));
+		cNuevo.setBackground(Color.blue);
+		cNuevo.setPreferredSize(new Dimension(300, 40));
 		
-		panel_2.setBackground(Color.yellow);
-		panel_2.setPreferredSize(new Dimension(300, 40));
+		cModificar.setBackground(Color.yellow);
+		cModificar.setPreferredSize(new Dimension(300, 40));
 		
-		panel_3.setBackground(Color.BLACK);
-		panel_3.setPreferredSize(new Dimension(300, 40));
+		cEliminar.setBackground(Color.BLACK);
+		cEliminar.setPreferredSize(new Dimension(300, 40));
 		
-		panel_4.setBackground(Color.GREEN);
-		panel_4.setPreferredSize(new Dimension(300, 40));
+		cBuscar.setBackground(Color.GREEN);
+		cBuscar.setPreferredSize(new Dimension(300, 40));
 
 		/* Creation and added the panel to the window */
 		contentPane = new JPanel();
@@ -71,7 +71,7 @@ public class ClienteVista extends JFrame {
 			panel.repaint();
 			panel.revalidate();
 			
-			panel.add(panel_1);
+			panel.add(cNuevo);
 			panel.repaint();
 			panel.revalidate();
 		});
@@ -88,25 +88,11 @@ public class ClienteVista extends JFrame {
 			panel.repaint();
 			panel.revalidate();
 			
-			panel.add(panel_2);
+			panel.add(cModificar);
 			panel.repaint();
 			panel.revalidate();
 		});
-		*/
-		
-		JButton btnSalir = new JButton("Salir");
-		btnSalir.setBounds(28, 347, 89, 23);
-		contentPane.add(btnSalir);
-		btnSalir.addActionListener(controlador);
-		/*
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
-		});
-		*/
-		
-		
+		*/		
 		
 
 		JButton btnEliminar = new JButton("Eliminar");
@@ -119,7 +105,7 @@ public class ClienteVista extends JFrame {
 			panel.repaint();
 			panel.revalidate();
 			
-			panel.add(panel_3);
+			panel.add(cEliminar);
 			panel.repaint();
 			panel.revalidate();
 		});
@@ -137,9 +123,21 @@ public class ClienteVista extends JFrame {
 			panel.repaint();
 			panel.revalidate();
 			
-			panel.add(panel_4);
+			panel.add(cBuscar);
 			panel.repaint();
 			panel.revalidate();
+		});
+		*/
+		
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.setBounds(28, 347, 89, 23);
+		contentPane.add(btnSalir);
+		btnSalir.addActionListener(controlador);
+		/*
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
 		});
 		*/
 
@@ -172,6 +170,10 @@ public class ClienteVista extends JFrame {
 	//Metodo para settear el controlador 
 	public void setControlador(ClienteControlador controlador) {
 		this.controlador = controlador;
+	}
+	
+	public JPanel getPanel() {
+		return panel;
 	}
 	
 }
