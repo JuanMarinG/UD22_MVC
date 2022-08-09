@@ -13,6 +13,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.CardLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class CientificoVista extends JFrame {
@@ -31,7 +33,7 @@ public class CientificoVista extends JFrame {
 		setBounds(150, 150, 800, 375);
 
 		/* Definition of the window */
-		setTitle("Cliente"); // PopUp window title
+		setTitle("Cientificos"); // PopUp window title
 		setBounds(700, 200, 700, 420); // X Y coordinates of the application and its height and length
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // Close the window when the operation is close
 		//setVisible(true);
@@ -54,11 +56,16 @@ public class CientificoVista extends JFrame {
 		cNuevo.setBackground(Color.blue);
 		cNuevo.setPreferredSize(new Dimension(300, 40));
 		
-		cBuscar.setBackground(Color.GREEN);
+		cBuscar.setBackground(Color.WHITE);
 		cBuscar.setPreferredSize(new Dimension(300, 40));
 
 		// BOTONES		
 		btnNuevo = new JButton("Nuevo");
+		btnNuevo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNuevo.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNuevo.setBounds(28, 128, 89, 23);
 		contentPane.add(btnNuevo);		
