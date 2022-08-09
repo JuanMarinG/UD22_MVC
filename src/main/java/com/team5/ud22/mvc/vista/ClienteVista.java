@@ -18,6 +18,7 @@ import javafx.scene.control.Pagination;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Rectangle;
@@ -36,7 +37,9 @@ public class ClienteVista extends JFrame {
 	protected static final Container content = null;
 	public JButton consultar, insertar, eliminar, modificar;
 	public JLabel consulta;
-	private JPanel contentPane, panel1_1, panel2;
+	private JPanel contentPane;
+	
+	private JPanel panel,panel_1,panel_2;
 
 	// CONSTRUCTOR VISTA
 
@@ -47,6 +50,16 @@ public class ClienteVista extends JFrame {
 		setTitle("Cliente"); // PopUp window title
 		setBounds(700, 200, 700, 420); // X Y coordinates of the application and its height and length
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // Close the window when the operation is close
+		
+		
+		// PANELS
+		panel_1 = new JPanel();
+		panel_2 = new JPanel();
+		
+		panel_1.setBackground(Color.blue);
+		panel_1.setPreferredSize(new Dimension(300, 40));
+		panel_2.setBackground(Color.yellow);
+		panel_2.setPreferredSize(new Dimension(300, 40));
 
 		/* Creation and added the panel to the window */
 		contentPane = new JPanel();
@@ -55,12 +68,17 @@ public class ClienteVista extends JFrame {
 		setContentPane(contentPane);
 
 		JButton btnNewButton = new JButton("Nuevo");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//JDesktopPane desktopPane = new JDesktopPane();
-				controlador.cambiarVistaNueva();
-			}
+		btnNewButton.addActionListener(e -> {
+			//controlador.cambiarVistaNueva();
+			panel.removeAll();
+			panel.repaint();
+			panel.revalidate();
+			
+			panel.add(panel_1);
+			panel.repaint();
+			panel.revalidate();
 		});
+		
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton.setBounds(28, 128, 89, 23);
 		contentPane.add(btnNewButton);
@@ -99,9 +117,16 @@ public class ClienteVista extends JFrame {
 		separator_1_1.setBounds(10, 333, 155, 2);
 		contentPane.add(separator_1_1);
 
-		JPanel panel = new JPanel();
+		 panel = new JPanel();
 		panel.setBounds(173, 11, 501, 359);
 		contentPane.add(panel);
+		panel.setLayout(new CardLayout(0, 0));
+		
+		JPanel panel_1 = new JPanel();
+		panel.add(panel_1, "name_1136427152841300");
+		
+		JPanel panel_2 = new JPanel();
+		panel.add(panel_2, "name_1136432303623300");
 
 	}
 	
