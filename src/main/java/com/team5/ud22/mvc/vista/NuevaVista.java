@@ -1,6 +1,8 @@
 package com.team5.ud22.mvc.vista;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import com.team5.ud22.mvc.controlador.ClienteControlador;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
