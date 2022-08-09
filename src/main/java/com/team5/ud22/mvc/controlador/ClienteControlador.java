@@ -19,23 +19,8 @@ public class ClienteControlador implements ActionListener{
 		clienteVista.setVisible(true);
 		afegirListenersBotons();
 	}
-			
-//	// GETTERS y SETTERS //
-//	public ClienteVista getClienteVista() {
-//		return clienteVista;
-//	}
-//
-//	public void setClienteVista(ClienteVista clienteVista) {
-//		this.clienteVista = clienteVista;
-//	}	
-//
-//	//nose si tiene alguna utilidad
-//	public void visibilityVistaCliente(boolean estado) {
-//		clienteVista.setVisible(estado);
-//	}
 	
 	private void afegirListenersBotons() {
-
 		clienteVista.getBtnBuscar().addActionListener(this);
 		clienteVista.getBtnEliminar().addActionListener(this);
 		clienteVista.getBtnModificar().addActionListener(this);
@@ -44,8 +29,7 @@ public class ClienteControlador implements ActionListener{
     }
 	
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		//String boton = e.getActionCommand();
+	public void actionPerformed(ActionEvent e) {		
 		switch(e.getActionCommand()) {
 		case "Nuevo":
 			changePanelForm(clienteVista.getcNuevo());

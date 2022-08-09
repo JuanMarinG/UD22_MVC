@@ -17,29 +17,8 @@ import java.awt.CardLayout;
 public class ClienteVista extends JFrame {
 
 	// ATTRIBUTES
-	private ClienteControlador controlador; 
 	protected static final Container content = null;
 	private JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir;
-	public JButton getBtnNuevo() {
-		return btnNuevo;
-	}
-
-	public JButton getBtnModificar() {
-		return btnModificar;
-	}
-
-	public JButton getBtnEliminar() {
-		return btnEliminar;
-	}
-
-	public JButton getBtnBuscar() {
-		return btnBuscar;
-	}
-
-	public JButton getBtnSalir() {
-		return btnSalir;
-	}
-
 	public JLabel consulta;
 	private JPanel contentPane;
 	
@@ -85,8 +64,7 @@ public class ClienteVista extends JFrame {
 		cBuscar.setBackground(Color.GREEN);
 		cBuscar.setPreferredSize(new Dimension(300, 40));
 
-		// Botones
-		
+		// BOTONES		
 		btnNuevo = new JButton("Nuevo");
 		btnNuevo.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNuevo.setBounds(28, 128, 89, 23);
@@ -108,6 +86,7 @@ public class ClienteVista extends JFrame {
 		btnSalir.setBounds(28, 347, 89, 23);
 		contentPane.add(btnSalir);
 		
+		
 		JLabel lblTitulo = new JLabel("CLIENTES");
 		lblTitulo.setForeground(new Color(255, 255, 255));
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -127,11 +106,6 @@ public class ClienteVista extends JFrame {
 		contentPane.add(separator_1_1);	
 
 	}	
-	
-	//Metodo para settear el controlador 
-	public void setControlador(ClienteControlador controlador) {
-		this.controlador = controlador;
-	}
 	
 	public JPanel getPanelForms() {
 		return panelForms;
@@ -153,4 +127,23 @@ public class ClienteVista extends JFrame {
 		return cBuscar;
 	}
 	
+	public JButton getBtnNuevo() {
+		return btnNuevo;
+	}
+
+	public JButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+	public JButton getBtnSalir() {
+		return btnSalir;
+	}
 }
