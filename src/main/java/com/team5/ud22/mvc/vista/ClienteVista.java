@@ -4,32 +4,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
 import java.awt.Font;
-import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
-import javax.swing.JTextPane;
-import javax.swing.border.BevelBorder;
-
 import com.team5.ud22.mvc.controlador.ClienteControlador;
-
-import javafx.scene.control.Pagination;
-
+import com.team5.ud22.mvc.vista.paneles.PanelTest;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Rectangle;
-import javax.swing.JLayeredPane;
-import javax.swing.UIManager;
 import java.awt.CardLayout;
-import java.awt.Button;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.JDesktopPane;
 
+@SuppressWarnings("serial")
 public class ClienteVista extends JFrame {
 
 	// ATTRIBUTES
@@ -53,7 +37,7 @@ public class ClienteVista extends JFrame {
 		
 		
 		// PANELS
-		panel_1 = new JPanel();
+		panel_1 = new PanelTest();
 		panel_2 = new JPanel();
 		
 		panel_1.setBackground(Color.blue);
