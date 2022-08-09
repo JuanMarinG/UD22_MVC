@@ -20,7 +20,7 @@ import java.awt.CardLayout;
 public class ClienteVista extends JFrame {
 
 	// ATTRIBUTES
-	//private ClienteControlador controlador; NO HACE FALTA YA QUE EL ULTIMO METODO NO ES NECESARIO
+	private ClienteControlador controlador; 
 	protected static final Container content = null;
 	public JButton consultar, insertar, eliminar, modificar;
 	public JLabel consulta;
@@ -94,11 +94,14 @@ public class ClienteVista extends JFrame {
 		JButton btnNewButton_1 = new JButton("Salir");
 		btnNewButton_1.setBounds(28, 347, 89, 23);
 		contentPane.add(btnNewButton_1);
+		btnNewButton_1.addActionListener(controlador);
+		/*
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
+		*/
 		
 		
 		
@@ -106,6 +109,8 @@ public class ClienteVista extends JFrame {
 		JButton btnNewButton_3 = new JButton("Eliminar");
 		btnNewButton_3.setBounds(28, 201, 89, 23);
 		contentPane.add(btnNewButton_3);
+		btnNewButton_3.addActionListener(controlador);
+		/*
 		btnNewButton_3.addActionListener(e -> {
 			panel.removeAll();
 			panel.repaint();
@@ -115,12 +120,15 @@ public class ClienteVista extends JFrame {
 			panel.repaint();
 			panel.revalidate();
 		});
+		*/
 		
 		
 
 		JButton btnNewButton_4 = new JButton("Buscar...");
 		btnNewButton_4.setBounds(28, 69, 89, 23);
 		contentPane.add(btnNewButton_4);
+		btnNewButton_4.addActionListener(controlador);
+		/*
 		btnNewButton_4.addActionListener(e -> {
 			panel.removeAll();
 			panel.repaint();
@@ -130,6 +138,7 @@ public class ClienteVista extends JFrame {
 			panel.repaint();
 			panel.revalidate();
 		});
+		*/
 
 		JLabel lblNewLabel = new JLabel("CLIENTES");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
@@ -157,10 +166,9 @@ public class ClienteVista extends JFrame {
 
 	}
 	
-	/* NO ES NECESARIO 
 	//Metodo para settear el controlador 
 	public void setControlador(ClienteControlador controlador) {
 		this.controlador = controlador;
 	}
-	*/
+	
 }
