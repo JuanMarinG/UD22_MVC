@@ -23,10 +23,10 @@ public class ClienteVista extends JFrame {
 	public JLabel consulta;
 	private JPanel contentPane;
 	
-	private JPanel panel,cNuevo,cModificar,cEliminar,cBuscar;
+	private JPanel panelForms,cNuevo,cModificar,cEliminar,cBuscar;
 
 	// CONSTRUCTOR VISTA
-
+	
 	public ClienteVista() {
 		setBounds(150, 150, 800, 375);
 
@@ -67,13 +67,13 @@ public class ClienteVista extends JFrame {
 		btnNuevo.addActionListener(controlador);
 		/*
 		btnNewButton.addActionListener(e -> {			
-			panel.removeAll();
-			panel.repaint();
-			panel.revalidate();
+			panelForms.removeAll();
+			panelForms.repaint();
+			panelForms.revalidate();
 			
-			panel.add(cNuevo);
-			panel.repaint();
-			panel.revalidate();
+			panelForms.add(cNuevo);
+			panelForms.repaint();
+			panelForms.revalidate();
 		});
 		*/
 		
@@ -84,13 +84,13 @@ public class ClienteVista extends JFrame {
 		btnModificar.addActionListener(controlador);
 		/*
 		btnNewButton_2.addActionListener(e -> {
-			panel.removeAll();
-			panel.repaint();
-			panel.revalidate();
+			panelForms.removeAll();
+			panelForms.repaint();
+			panelForms.revalidate();
 			
-			panel.add(cModificar);
-			panel.repaint();
-			panel.revalidate();
+			panelForms.add(cModificar);
+			panelForms.repaint();
+			panelForms.revalidate();
 		});
 		*/		
 		
@@ -101,13 +101,13 @@ public class ClienteVista extends JFrame {
 		btnEliminar.addActionListener(controlador);
 		/*
 		btnNewButton_3.addActionListener(e -> {
-			panel.removeAll();
-			panel.repaint();
-			panel.revalidate();
+			panelForms.removeAll();
+			panelForms.repaint();
+			panelForms.revalidate();
 			
-			panel.add(cEliminar);
-			panel.repaint();
-			panel.revalidate();
+			panelForms.add(cEliminar);
+			panelForms.repaint();
+			panelForms.revalidate();
 		});
 		*/
 		
@@ -119,13 +119,13 @@ public class ClienteVista extends JFrame {
 		btnBuscar.addActionListener(controlador);
 		/*
 		btnNewButton_4.addActionListener(e -> {
-			panel.removeAll();
-			panel.repaint();
-			panel.revalidate();
+			panelForms.removeAll();
+			panelForms.repaint();
+			panelForms.revalidate();
 			
-			panel.add(cBuscar);
-			panel.repaint();
-			panel.revalidate();
+			panelForms.add(cBuscar);
+			panelForms.repaint();
+			panelForms.revalidate();
 		});
 		*/
 		
@@ -159,10 +159,10 @@ public class ClienteVista extends JFrame {
 		separator_1_1.setBounds(10, 333, 155, 2);
 		contentPane.add(separator_1_1);
 
-		panel = new JPanel();
-		panel.setBounds(173, 11, 501, 359);
-		contentPane.add(panel);
-		panel.setLayout(new CardLayout(0, 0));
+		panelForms = new JPanel();
+		panelForms.setBounds(173, 11, 501, 359);
+		contentPane.add(panelForms);
+		panelForms.setLayout(new CardLayout(0, 0));
 		
 
 	}
@@ -172,8 +172,25 @@ public class ClienteVista extends JFrame {
 		this.controlador = controlador;
 	}
 	
-	public JPanel getPanel() {
-		return panel;
+	public JPanel getPanelForms() {
+		return panelForms;
 	}
+	
+	public JPanel getcNuevo() {
+		return cNuevo;
+	}
+
+	public JPanel getcModificar() {
+		return cModificar;
+	}
+
+	public JPanel getcEliminar() {
+		return cEliminar;
+	}
+
+	public JPanel getcBuscar() {
+		return cBuscar;
+	}
+
 	
 }
