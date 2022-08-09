@@ -2,13 +2,11 @@ package com.team5.ud22.mvc;
 
 import com.team5.ud22.mvc.controlador.ClienteControlador;
 import com.team5.ud22.mvc.vista.ClienteVista;
-import com.team5.ud22.mvc.vista.NuevaVista;
 
 public class App {
 	
 	ClienteControlador clienteControlador;
 	ClienteVista clienteVista;
-	NuevaVista nuevaVista;
 	
     public static void main(String[] args) {
     	App programa = new App();
@@ -16,22 +14,19 @@ public class App {
     }
 
 	private void start() {
-		// Instanciar clases vistas
+		// Instanciar clase vista
 		clienteVista = new ClienteVista();
-    	nuevaVista = new NuevaVista();
     	
     	// Instanciar controlador/es
     	clienteControlador = new ClienteControlador();
     	
-    	// Settear controlador a las vistas
-    	clienteVista.setControlador(clienteControlador);
-    	nuevaVista.setControlador(clienteControlador);
+    	// Settear controlador a las vistas - NO ES NECESARIO
+    	//clienteVista.setControlador(clienteControlador);
     	
-    	// Settear vistas al controlador
+    	// Settear vistas al controlador -- ESTE SI QUE ES NECESARIO
     	clienteControlador.setClienteVista(clienteVista);
-    	clienteControlador.setNuevaVista(nuevaVista);
     	
-    	// Iniciar programa mostrando vista principal
-    	clienteVista.setVisible(true);
+    	// Iniciar programa mostrando vista principal    	
+    	clienteControlador.visibilityVistaCliente(true);
 	}
 }

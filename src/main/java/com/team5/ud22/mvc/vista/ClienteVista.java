@@ -20,7 +20,7 @@ import java.awt.CardLayout;
 public class ClienteVista extends JFrame {
 
 	// ATTRIBUTES
-	private ClienteControlador controlador;
+	//private ClienteControlador controlador; NO HACE FALTA YA QUE EL ULTIMO METODO NO ES NECESARIO
 	protected static final Container content = null;
 	public JButton consultar, insertar, eliminar, modificar;
 	public JLabel consulta;
@@ -67,8 +67,7 @@ public class ClienteVista extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNewButton.setBounds(28, 128, 89, 23);
 		contentPane.add(btnNewButton);
-		btnNewButton.addActionListener(e -> {
-			//controlador.cambiarVistaNueva();
+		btnNewButton.addActionListener(e -> {			
 			panel.removeAll();
 			panel.repaint();
 			panel.revalidate();
@@ -83,7 +82,6 @@ public class ClienteVista extends JFrame {
 		btnNewButton_2.setBounds(27, 167, 89, 23);
 		contentPane.add(btnNewButton_2);
 		btnNewButton_2.addActionListener(e -> {
-			//controlador.cambiarVistaNueva();
 			panel.removeAll();
 			panel.repaint();
 			panel.revalidate();
@@ -109,7 +107,6 @@ public class ClienteVista extends JFrame {
 		btnNewButton_3.setBounds(28, 201, 89, 23);
 		contentPane.add(btnNewButton_3);
 		btnNewButton_3.addActionListener(e -> {
-			//controlador.cambiarVistaNueva();
 			panel.removeAll();
 			panel.repaint();
 			panel.revalidate();
@@ -125,7 +122,6 @@ public class ClienteVista extends JFrame {
 		btnNewButton_4.setBounds(28, 69, 89, 23);
 		contentPane.add(btnNewButton_4);
 		btnNewButton_4.addActionListener(e -> {
-			//controlador.cambiarVistaNueva();
 			panel.removeAll();
 			panel.repaint();
 			panel.revalidate();
@@ -161,8 +157,10 @@ public class ClienteVista extends JFrame {
 
 	}
 	
-	// Metodo para settear el controlador
+	/* NO ES NECESARIO 
+	//Metodo para settear el controlador 
 	public void setControlador(ClienteControlador controlador) {
 		this.controlador = controlador;
 	}
+	*/
 }
