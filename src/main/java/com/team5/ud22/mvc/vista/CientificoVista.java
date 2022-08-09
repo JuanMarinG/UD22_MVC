@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
-import com.team5.ud22.mvc.controlador.Ex1Controlador;
 import com.team5.ud22.mvc.vista.paneles.PanelTest;
 import java.awt.Color;
 import java.awt.Container;
@@ -14,7 +13,7 @@ import java.awt.Dimension;
 import java.awt.CardLayout;
 
 @SuppressWarnings("serial")
-public class ClienteVista extends JFrame {
+public class CientificoVista extends JFrame {
 
 	// ATTRIBUTES
 	protected static final Container content = null;
@@ -26,7 +25,7 @@ public class ClienteVista extends JFrame {
 
 	// CONSTRUCTOR VISTA
 	
-	public ClienteVista() {
+	public CientificoVista() {
 		setBounds(150, 150, 800, 375);
 
 		/* Definition of the window */
@@ -71,10 +70,12 @@ public class ClienteVista extends JFrame {
 		contentPane.add(btnNuevo);		
 		
 		btnModificar = new JButton("Modificar");
+		btnModificar.setEnabled(false);
 		btnModificar.setBounds(27, 167, 89, 23);
 		contentPane.add(btnModificar);	
 		
 		btnEliminar = new JButton("Eliminar");
+		btnEliminar.setEnabled(false);
 		btnEliminar.setBounds(28, 201, 89, 23);
 		contentPane.add(btnEliminar);
 		
@@ -87,10 +88,10 @@ public class ClienteVista extends JFrame {
 		contentPane.add(btnSalir);
 		
 		
-		JLabel lblTitulo = new JLabel("CLIENTES");
+		JLabel lblTitulo = new JLabel("CIENTIFICOS");
 		lblTitulo.setForeground(new Color(255, 255, 255));
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblTitulo.setBounds(34, 11, 83, 23);
+		lblTitulo.setBounds(28, 11, 108, 23);
 		contentPane.add(lblTitulo);
 
 		JSeparator separator = new JSeparator();

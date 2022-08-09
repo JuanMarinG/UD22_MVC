@@ -9,12 +9,12 @@ import javax.swing.JPanel;
 import com.team5.ud22.mvc.vista.ClienteVista;
 
 
-public class ClienteControlador implements ActionListener{
+public class Ex1Controlador implements ActionListener{
 	
 	// VISTAS //
 	private ClienteVista clienteVista;
 	
-	public ClienteControlador() {
+	public Ex1Controlador() {
 		clienteVista = new ClienteVista();
 		clienteVista.setVisible(true);
 		afegirListenersBotons();
