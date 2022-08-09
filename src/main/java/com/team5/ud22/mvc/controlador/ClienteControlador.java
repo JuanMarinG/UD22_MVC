@@ -13,7 +13,7 @@ public class ClienteControlador implements ActionListener{
 	
 	// VISTAS //
 	private ClienteVista clienteVista;
-	private Data utils;
+	private Data data;
 	
 	// GETTERS y SETTERS //
 	public ClienteVista getClienteVista() {
@@ -33,7 +33,7 @@ public class ClienteControlador implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		switch(e.getActionCommand()) {
 		case "Nuevo":
-			
+			data.changePanelForm(null);
 			break;
 		case "Modificar":
 			
