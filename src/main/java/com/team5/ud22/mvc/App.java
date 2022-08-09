@@ -15,7 +15,7 @@ public class App {
 
 	private void start() {
 		// Instanciar clase vista
-		clienteVista = new ClienteVista();
+		//clienteVista = new ClienteVista();
     	
     	// Instanciar controlador/es
     	clienteControlador = new ClienteControlador();
@@ -24,9 +24,9 @@ public class App {
     	//clienteVista.setControlador(clienteControlador);
     	
     	// Settear vistas al controlador -- ESTE SI QUE ES NECESARIO
-    	clienteControlador.setClienteVista(clienteVista);
+    	//clienteControlador.setClienteVista(clienteVista);
     	
     	// Iniciar programa mostrando vista principal    	
-    	clienteControlador.visibilityVistaCliente(true);
+    	//clienteControlador.visibilityVistaCliente(true);
 	}
 }
