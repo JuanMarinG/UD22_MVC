@@ -48,7 +48,7 @@ public class ProyectoNuevo extends JPanel {
     	add(btnGuardar);
     	
     	lblTitle = new JLabel("Introduce los datos del nuevo proyecto");
-    	lblTitle.setBounds(28, 25, 294, 14);
+    	lblTitle.setBounds(142, 23, 294, 14);
     	add(lblTitle);
     	
     	lblHoras = new JLabel("Horas realizadas");

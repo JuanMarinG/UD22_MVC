@@ -14,13 +14,17 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
 import com.team5.ud22.mvc.vista.paneles.PanelTest;
+import com.team5.ud22.mvc.vista.paneles.ProyectoBuscar;
+import com.team5.ud22.mvc.vista.paneles.ProyectoEliminar;
+import com.team5.ud22.mvc.vista.paneles.ProyectoModificar;
+import com.team5.ud22.mvc.vista.paneles.ProyectoNuevo;
 
 public class ProyectosVista extends JFrame {
 
 	protected static final Container content = null;
 	private JPanel contentPane;	
-	private JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir;
-	private JPanel panelForms,cNuevo,cModificar,cEliminar,cBuscar;
+	private JButton btnNuevo,btnBuscar,btnSalir;
+	private JPanel pnlForms,pnlNuevo,pnlBuscar;
 
 	/**
 	 * Create the frame.
@@ -54,41 +58,29 @@ public class ProyectosVista extends JFrame {
 		contentPane.add(separator_1_1);
 		
 		// PANELS
-		panelForms = new JPanel();
-		panelForms.setBounds(173, 11, 501, 359);
-		contentPane.add(panelForms);
-		panelForms.setLayout(new CardLayout(0, 0));
+		pnlForms = new JPanel();
+		pnlForms.setBounds(173, 11, 501, 359);
+		contentPane.add(pnlForms);
+		pnlForms.setLayout(new CardLayout(0, 0));
 		
-		cNuevo = new PanelTest();
-		cModificar = new JPanel();
-		cEliminar = new JPanel();
-		cBuscar = new JPanel();
+		pnlNuevo = new ProyectoNuevo();		
+		pnlBuscar = new ProyectoBuscar();		
 		
-		cNuevo.setBackground(Color.blue);
-		cNuevo.setPreferredSize(new Dimension(300, 40));
-		
-		cModificar.setBackground(Color.yellow);
-		cModificar.setPreferredSize(new Dimension(300, 40));
-		
-		cEliminar.setBackground(Color.BLACK);
-		cEliminar.setPreferredSize(new Dimension(300, 40));
-		
-		cBuscar.setBackground(Color.GREEN);
-		cBuscar.setPreferredSize(new Dimension(300, 40));
-
 		// BOTONES		
 		btnNuevo = new JButton("Nuevo");
 		btnNuevo.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNuevo.setBounds(28, 128, 89, 23);
 		contentPane.add(btnNuevo);		
 		
-		btnModificar = new JButton("Modificar");
-		btnModificar.setBounds(27, 167, 89, 23);
-		contentPane.add(btnModificar);	
-		
+		/*		 
+		btnModificar = new JButton("Modificar"); 
+		btnModificar.setBounds(27, 167, 89, 23); 
+		contentPane.add(btnModificar);
+		 			
 		btnEliminar = new JButton("Eliminar");
 		btnEliminar.setBounds(28, 201, 89, 23);
 		contentPane.add(btnEliminar);
+		*/
 		
 		btnBuscar = new JButton("Buscar...");
 		btnBuscar.setBounds(28, 69, 89, 23);
@@ -97,6 +89,30 @@ public class ProyectosVista extends JFrame {
 		btnSalir = new JButton("Salir");
 		btnSalir.setBounds(28, 347, 89, 23);
 		contentPane.add(btnSalir);
+	}
+
+	public JButton getBtnNuevo() {
+		return btnNuevo;
+	}	
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+	public JButton getBtnSalir() {
+		return btnSalir;
+	}
+
+	public JPanel getPnlForms() {
+		return pnlForms;
+	}
+
+	public JPanel getPnlNuevo() {
+		return pnlNuevo;
+	}
+
+	public JPanel getPnlBuscar() {
+		return pnlBuscar;
 	}
 
 }
