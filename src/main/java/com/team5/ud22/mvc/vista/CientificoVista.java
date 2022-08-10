@@ -7,18 +7,18 @@ import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
-import lombok.Getter;
 import java.awt.Color;
 
 
 @SuppressWarnings("serial")
 public class CientificoVista extends JFrame {
 
-	private @Getter JPanel contentPane, panel;
-	private @Getter JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir,btnGuardar,btnAdd;
+	private  JPanel contentPane, panel;
 	
-	private @Getter JTextField txtDNI, txtNomApels;
-	private @Getter JLabel lblNomApels;
+	private  JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir,btnGuardar,btnAdd;
+	
+	private  JTextField txtDNI, txtNomApels;
+	private  JLabel lblNomApels;
 
 
 	public CientificoVista() {
@@ -116,6 +116,55 @@ public class CientificoVista extends JFrame {
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setBounds(10, 333, 155, 2);
 		getContentPane().add(separator_1_1);	
+	}
+	
+	public JButton getBtnNuevo() {
+		return btnNuevo;
+	}
+
+
+	public JButton getBtnModificar() {
+		return btnModificar;
+	}
+
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+
+	public JButton getBtnSalir() {
+		return btnSalir;
+	}
+
+
+	public JButton getBtnGuardar() {
+		return btnGuardar;
+	}
+
+
+	public JButton getBtnAdd() {
+		return btnAdd;
+	}
+
+
+	public JTextField getTxtDNI() {
+		return txtDNI;
+	}
+
+
+	public JTextField getTxtNomApels() {
+		return txtNomApels;
+	}
+
+
+	public JLabel getLblNomApels() {
+		return lblNomApels;
 	}
 	
 }
