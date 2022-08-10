@@ -13,7 +13,7 @@ import com.team5.ud22.mvc.modelo.conexion.ConnectionDB;
 public class CientificoDAO {
 	
 	// Obtener todos los cientificos
-	public List<Cientifico> getCientificos(){
+	public static List<Cientifico> getCientificos(){
 		List<Cientifico> cientificos = new ArrayList<Cientifico>();
 		Connection conn = null;
 		try {
@@ -61,7 +61,7 @@ public class CientificoDAO {
 	}
 	
 	// Crear cientifico
-	public void insertarCientifico(Cientifico cientifico) {
+	public static void insertarCientifico(Cientifico cientifico) {
 		Connection conn = null;
 		try {
 			conn = ConnectionDB.getConexion("UD22_3MVC");			
@@ -78,12 +78,12 @@ public class CientificoDAO {
 	}
 	
 	// Actualizar cientifico
-	public void actualizarCientifico(Cientifico cientifico) {
+	public static void actualizarCientifico(Cientifico cientifico) {
 		Connection conn = null;
 		try {
 			conn = ConnectionDB.getConexion("UD22_3MVC");			
-			String sql = "UPDATE Cientificos"
-					+ " NomApels = ?,"
+			String sql = "UPDATE Cientificos SET"
+					+ " NomApels = ?"
 					+ " WHERE DNI = ?";
 			PreparedStatement pSt = conn.prepareStatement(sql);
 			pSt.setString(1, cientifico.getNomApels());
@@ -96,7 +96,7 @@ public class CientificoDAO {
 	}
 	
 	// Eliminar cientifico
-	public void eliminarCientifico(String dni) {
+	public static void eliminarCientifico(String dni) {
 		Connection conn = null;
 		try {
 			conn = ConnectionDB.getConexion("UD22_3MVC");	

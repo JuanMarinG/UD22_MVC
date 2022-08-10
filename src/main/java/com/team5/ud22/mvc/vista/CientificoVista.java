@@ -6,27 +6,23 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
+import javax.swing.JTextField;
 
-import com.team5.ud22.mvc.vista.paneles.CientificoBuscar;
-import com.team5.ud22.mvc.vista.paneles.PanelTest;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.CardLayout;
 
 @SuppressWarnings("serial")
 public class CientificoVista extends JFrame {
 
-	// ATTRIBUTES
-	protected static final Container content = null;
-	private JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir;
-	public JLabel consulta;
-	private JPanel contentPane;
+	private @Getter JPanel contentPane, panel;
+	private @Getter JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir,btnGuardar,btnAdd;
 	
-	private JPanel panelForms,cNuevo,cBuscar;
+	private @Getter JTextField txtDNI, txtNomApels;
+	private @Getter JLabel lblNomApels;
 
-	// CONSTRUCTOR VISTA
-	
+
 	public CientificoVista() {
 		setBounds(150, 150, 800, 375);
 
@@ -43,19 +39,42 @@ public class CientificoVista extends JFrame {
 		setContentPane(contentPane);
 				
 		// PANELS
-		panelForms = new JPanel();
-		panelForms.setBounds(173, 11, 501, 359);
-		contentPane.add(panelForms);
-		panelForms.setLayout(new CardLayout(0, 0));
+		panel = new JPanel();
+		panel.setBounds(173, 11, 501, 359);
+		contentPane.add(panel);
+		panel.setLayout(null);
 		
-		cNuevo = new PanelTest();
-		cBuscar = new CientificoBuscar();
+		JLabel lblDni = new JLabel("DNI:");
+		lblDni.setBounds(203, 141, 32, 28);
+		panel.add(lblDni);
 		
-		cNuevo.setBackground(Color.blue);
-		cNuevo.setPreferredSize(new Dimension(300, 40));
+		txtDNI = new JTextField();
+		txtDNI.setBounds(235, 145, 86, 20);
+		panel.add(txtDNI);
+		txtDNI.setColumns(10);
 		
-		cBuscar.setBackground(Color.GREEN);
-		cBuscar.setPreferredSize(new Dimension(300, 40));
+		lblNomApels = new JLabel("NomApels:");
+		lblNomApels.setBounds(165, 175, 70, 28);
+		lblNomApels.setVisible(false);
+		panel.add(lblNomApels);
+		
+		txtNomApels = new JTextField();
+		txtNomApels.setEditable(false);
+		txtNomApels.setColumns(10);
+		txtNomApels.setBounds(235, 179, 86, 20);
+		txtNomApels.setVisible(false);
+		panel.add(txtNomApels);
+		
+		btnGuardar = new JButton("GUARDAR");
+		btnGuardar.setBounds(194, 233, 114, 23);
+		btnGuardar.setVisible(false);
+		panel.add(btnGuardar);
+		
+		btnAdd = new JButton("ADD");
+		btnAdd.setBounds(194, 233, 114, 23);
+		btnAdd.setVisible(false);
+		panel.add(btnAdd);
+		
 
 		// BOTONES		
 		btnNuevo = new JButton("Nuevo");
@@ -98,39 +117,7 @@ public class CientificoVista extends JFrame {
 
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setBounds(10, 333, 155, 2);
-		contentPane.add(separator_1_1);	
-
-	}	
-	
-	public JPanel getPanelForms() {
-		return panelForms;
+		getContentPane().add(separator_1_1);	
 	}
 	
-	public JPanel getcNuevo() {
-		return cNuevo;
-	}
-
-	public JPanel getcBuscar() {
-		return cBuscar;
-	}
-	
-	public JButton getBtnNuevo() {
-		return btnNuevo;
-	}
-
-	public JButton getBtnModificar() {
-		return btnModificar;
-	}
-
-	public JButton getBtnEliminar() {
-		return btnEliminar;
-	}
-
-	public JButton getBtnBuscar() {
-		return btnBuscar;
-	}
-
-	public JButton getBtnSalir() {
-		return btnSalir;
-	}
 }

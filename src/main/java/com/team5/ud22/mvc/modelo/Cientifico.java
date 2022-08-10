@@ -1,29 +1,15 @@
 package com.team5.ud22.mvc.modelo;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Cientifico {
-	private String dni;
-	private String nomApels;
-	
-	public Cientifico(String dni, String nomApels) {
-		super();
-		this.dni = dni;
-		this.nomApels = nomApels;
-	}
-	
-	public String getDni() {
-		return dni;
-	}
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-	public String getNomApels() {
-		return nomApels;
-	}
-	public void setNomApels(String nomApels) {
-		this.nomApels = nomApels;
-	}
-	@Override
-	public String toString() {
-		return nomApels+"\n"+dni;
-	}
+	private @Getter @Setter String dni;
+	private @Getter @Setter String nomApels;
 }
