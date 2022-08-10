@@ -55,9 +55,9 @@ public class ConnectionDB {
 		return conexion;
 	}
 	
-	public static void clear(String db) {
+	public static void clear(String db, String tabla) {
 		try {
-			String Query = "DELETE FROM Cliente";
+			String Query = "DELETE FROM "+tabla;
 			Statement st = getConexion(db).createStatement();
 			st.executeUpdate(Query);
 		} catch (SQLException ex) {}
