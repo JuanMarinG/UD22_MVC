@@ -7,11 +7,9 @@ import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
-
 import lombok.Getter;
-import lombok.Setter;
-
 import java.awt.Color;
+
 
 @SuppressWarnings("serial")
 public class CientificoVista extends JFrame {
@@ -27,7 +25,7 @@ public class CientificoVista extends JFrame {
 		setBounds(150, 150, 800, 375);
 
 		/* Definition of the window */
-		setTitle("Cliente"); // PopUp window title
+		setTitle("Cientificos"); // PopUp window title
 		setBounds(700, 200, 700, 420); // X Y coordinates of the application and its height and length
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // Close the window when the operation is close
 		//setVisible(true);
