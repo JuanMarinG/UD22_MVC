@@ -4,7 +4,6 @@ package com.team5.ud22.mvc.vista;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.Font;
 
 import javax.swing.JButton;
@@ -13,18 +12,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
-import com.team5.ud22.mvc.vista.paneles.PanelTest;
 import com.team5.ud22.mvc.vista.paneles.ProyectoBuscar;
-import com.team5.ud22.mvc.vista.paneles.ProyectoEliminar;
-import com.team5.ud22.mvc.vista.paneles.ProyectoModificar;
 import com.team5.ud22.mvc.vista.paneles.ProyectoNuevo;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ProyectosVista extends JFrame {
 
 	protected static final Container content = null;
 	private JPanel contentPane;	
 	private JButton btnNuevo,btnBuscar,btnSalir;
-	private JPanel pnlForms,pnlNuevo,pnlBuscar;
+	private JPanel pnlForms;
+	private ProyectoNuevo pnlNuevo;
+	private ProyectoBuscar pnlBuscar;
 
 	/**
 	 * Create the frame.
@@ -64,23 +64,14 @@ public class ProyectosVista extends JFrame {
 		pnlForms.setLayout(new CardLayout(0, 0));
 		
 		pnlNuevo = new ProyectoNuevo();		
-		pnlBuscar = new ProyectoBuscar();		
+		pnlBuscar = new ProyectoBuscar();	
+		
 		
 		// BOTONES		
 		btnNuevo = new JButton("Nuevo");
 		btnNuevo.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNuevo.setBounds(28, 128, 89, 23);
-		contentPane.add(btnNuevo);		
-		
-		/*		 
-		btnModificar = new JButton("Modificar"); 
-		btnModificar.setBounds(27, 167, 89, 23); 
-		contentPane.add(btnModificar);
-		 			
-		btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(28, 201, 89, 23);
-		contentPane.add(btnEliminar);
-		*/
+		contentPane.add(btnNuevo);
 		
 		btnBuscar = new JButton("Buscar...");
 		btnBuscar.setBounds(28, 69, 89, 23);
@@ -107,11 +98,11 @@ public class ProyectosVista extends JFrame {
 		return pnlForms;
 	}
 
-	public JPanel getPnlNuevo() {
+	public ProyectoNuevo getPnlNuevo() {
 		return pnlNuevo;
 	}
 
-	public JPanel getPnlBuscar() {
+	public ProyectoBuscar getPnlBuscar() {
 		return pnlBuscar;
 	}
 
