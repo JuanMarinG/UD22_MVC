@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import com.team5.ud22.mvc.modelo.Cientifico;
 import com.team5.ud22.mvc.modelo.CientificoDAO;
@@ -43,23 +44,25 @@ public class Ex3Controlador implements ActionListener, KeyListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		JButton btn = (JButton) e.getSource();
+		System.out.println(btn.getActionCommand());
 		switch (e.getActionCommand()) {
-		case "PROYECTOS":
+		case "mainBtnProyectos":
 			proyectosVista.setVisible(true);
 			break;
-		case "CIENTIFICOS":
+		case "mainBtnCientificos":
 			cientificoVista.setVisible(true);
 			break;
-		case "VER":
+		case "mainBtnVer":
 			//verVista.setVisible(true);
 			JOptionPane.showMessageDialog(null, "No implementado aun");
 			break;
-		case "Buscar...":
+		case "cientificoBtnBuscar":
 			reset();
 			cientificoVista.getTxtDNI().setEditable(true);
 			cientificoVista.getTxtDNI().setText("");
 			break;
-		case "Nuevo":
+		case "cientificoBtnNuevo":
 			reset();
 			cientificoVista.getTxtDNI().setEditable(true);
 			cientificoVista.getTxtDNI().setText("");
@@ -68,16 +71,16 @@ public class Ex3Controlador implements ActionListener, KeyListener {
 			cientificoVista.getTxtNomApels().setVisible(true);
 			cientificoVista.getTxtNomApels().setEditable(true);
 			break;
-		case "Eliminar":
+		case "cientificoBtnEliminar":
 			CientificoDAO.eliminarCientifico(cientificoVista.getTxtDNI().getText());
 			JOptionPane.showMessageDialog(null, "Cientifico eliminado!");
 			vaciarCamposTexto();
 			break;
-		case "Modificar":
+		case "cientificoBtnModificar":
 			cientificoVista.getBtnGuardar().setVisible(true);
 			cientificoVista.getTxtNomApels().setEditable(true);
 			break;
-		case "ADD":
+		case "cientificoBtnAdd":
 			if(cientificoVista.getTxtDNI().getText().trim().equals("") ||
 					cientificoVista.getTxtNomApels().getText().trim().equals("")) {
 				JOptionPane.showMessageDialog(null, "Rellena los campos");
@@ -96,7 +99,7 @@ public class Ex3Controlador implements ActionListener, KeyListener {
 				JOptionPane.showMessageDialog(null, "El cientifico ya existe!");
 			}
 			break;
-		case "GUARDAR":
+		case "cientificoBtnGuardar":
 			try {
 				CientificoDAO.actualizarCientifico(
 					new Cientifico(
@@ -109,7 +112,7 @@ public class Ex3Controlador implements ActionListener, KeyListener {
 				JOptionPane.showMessageDialog(null, "Ha habido un error");
 			}
 			break;
-		case "Salir":
+		case "cientificoBtnSalir":
 			cientificoVista.dispose();
 			break;
 		default:

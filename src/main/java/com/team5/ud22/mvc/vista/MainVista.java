@@ -13,18 +13,20 @@ public class MainVista extends JFrame{
 		/* Definition of the window */
 		setTitle("MAIN"); // PopUp window title
 		setBounds(700, 200, 400, 200); // X Y coordinates of the application and its height and length
-		setDefaultCloseOperation(EXIT_ON_CLOSE); // Close the window when the operation is close
 		
 		btnProyectos = new JButton("PROYECTOS");
 		btnProyectos.setBounds(123, 25, 126, 23);
+		btnProyectos.setActionCommand("mainBtnProyectos");
 		getContentPane().add(btnProyectos);
 		
 		btnCientificos = new JButton("CIENTIFICOS");
 		btnCientificos.setBounds(123, 59, 126, 23);
+		btnCientificos.setActionCommand("mainBtnCientificos");
 		getContentPane().add(btnCientificos);
 		
 		btnRelacion = new JButton("VER");
 		btnRelacion.setBounds(131, 127, 103, 23);
+		btnRelacion.setActionCommand("mainBtnVer");
 		getContentPane().add(btnRelacion);
 		
 		JLabel lblNewLabel = new JLabel("Cientificos x Proyectos");

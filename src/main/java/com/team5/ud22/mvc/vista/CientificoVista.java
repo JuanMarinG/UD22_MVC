@@ -66,11 +66,13 @@ public class CientificoVista extends JFrame {
 		btnGuardar = new JButton("GUARDAR");
 		btnGuardar.setBounds(194, 233, 114, 23);
 		btnGuardar.setVisible(false);
+		btnGuardar.setActionCommand("cientificoBtnGuardar");
 		panel.add(btnGuardar);
 		
 		btnAdd = new JButton("ADD");
 		btnAdd.setBounds(194, 233, 114, 23);
 		btnAdd.setVisible(false);
+		btnAdd.setActionCommand("cientificoBtnAdd");
 		panel.add(btnAdd);
 		
 
@@ -78,24 +80,29 @@ public class CientificoVista extends JFrame {
 		btnNuevo = new JButton("Nuevo");
 		btnNuevo.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNuevo.setBounds(28, 128, 89, 23);
+		btnNuevo.setActionCommand("cientificoBtnNuevo");
 		contentPane.add(btnNuevo);		
 		
 		btnModificar = new JButton("Modificar");
 		btnModificar.setEnabled(false);
 		btnModificar.setBounds(27, 167, 89, 23);
+		btnModificar.setActionCommand("cientificoBtnModificar");
 		contentPane.add(btnModificar);	
 		
 		btnEliminar = new JButton("Eliminar");
 		btnEliminar.setEnabled(false);
 		btnEliminar.setBounds(28, 201, 89, 23);
+		btnEliminar.setActionCommand("cientificoBtnEliminar");
 		contentPane.add(btnEliminar);
 		
 		btnBuscar = new JButton("Buscar...");
 		btnBuscar.setBounds(28, 69, 89, 23);
+		btnBuscar.setActionCommand("cientificoBtnBuscar");
 		contentPane.add(btnBuscar);
 				
 		btnSalir = new JButton("Salir");
 		btnSalir.setBounds(28, 347, 89, 23);
+		btnSalir.setActionCommand("cientificoBtnSalir");
 		contentPane.add(btnSalir);
 		
 		

@@ -33,6 +33,7 @@ public class CientificoBuscar extends JPanel {
     	
     	btnBuscarCientifico = new JButton("BUSCAR");
     	btnBuscarCientifico.setBounds(178, 77, 89, 23);
+    	btnBuscarCientifico.setActionCommand("cientificoBtnBuscar");
     	add(btnBuscarCientifico);
     	
     	JTextPane txtpnIntroduceElDni = new JTextPane();
