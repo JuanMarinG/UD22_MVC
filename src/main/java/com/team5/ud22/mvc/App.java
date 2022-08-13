@@ -18,14 +18,13 @@ public class App {
     	System.out.println("ok");
     	switch(n) {
     	case "1":
-    		new ClienteControlador();
+    		//new Ex1Controlador().display();
     		break;
     	case "2":
-    		new ClienteControlador();
-    		new VideoControlador();
+    		//new Ex2Controlador().display();
     		break;
     	case "3":
-    		new Ex3Controlador().display();;
+    		new Ex3Controlador().display();
     		break;
     	}
     }

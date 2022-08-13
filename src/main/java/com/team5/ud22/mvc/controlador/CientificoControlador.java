@@ -97,6 +97,7 @@ public class CientificoControlador implements ActionListener, KeyListener {
 			}
 			if(nomApels.trim().equals("")) {
 				JOptionPane.showMessageDialog(null, "Falta nombre y apellidos");
+				break;
 			}
 			int codigo = CientificoDAO.insertarCientifico(new Cientifico(dni,nomApels));
 			if(codigo == 0) {
