@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
-import com.team5.ud22.mvc.controlador.Ex1Controlador;
 import com.team5.ud22.mvc.vista.paneles.PanelTest;
 import java.awt.Color;
 import java.awt.Container;

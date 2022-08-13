@@ -61,7 +61,8 @@ public class CientificoDAO {
 	}
 	
 	// Crear cientifico
-	public static void insertarCientifico(Cientifico cientifico) {
+	public static int insertarCientifico(Cientifico cientifico) {
+		int codigo = 0;
 		Connection conn = null;
 		try {
 			conn = ConnectionDB.getConexion("UD22_3MVC");			
@@ -73,8 +74,11 @@ public class CientificoDAO {
 
 			pSt.close();
 			ConnectionDB.closeConnection();
-		} catch(Exception e) {e.printStackTrace();} 
-		
+		} catch(Exception e) {
+			e.printStackTrace();
+			codigo = 1;
+		} 
+		return codigo;
 	}
 	
 	// Actualizar cientifico

@@ -6,20 +6,19 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
-import javax.swing.JTextField;
+
+import com.team5.ud22.mvc.vista.paneles.cientifico.CientificoBuscar;
+import com.team5.ud22.mvc.vista.paneles.cientifico.CientificoModificar;
+
+import java.awt.CardLayout;
 import java.awt.Color;
 
 
 @SuppressWarnings("serial")
 public class CientificoVista extends JFrame {
 
-	private  JPanel contentPane, panel;
-	
-	private  JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir,btnGuardar,btnAdd;
-	
-	private  JTextField txtDNI, txtNomApels;
-	private  JLabel lblNomApels;
-
+	private JPanel contentPane, panel, panelBuscar, panelModificar;
+	private JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir;
 
 	public CientificoVista() {
 		setBounds(150, 150, 800, 375);
@@ -38,43 +37,15 @@ public class CientificoVista extends JFrame {
 				
 		// PANELS
 		panel = new JPanel();
-		panel.setBounds(173, 11, 501, 359);
+		panel.setBounds(173, 63, 501, 307);
 		contentPane.add(panel);
-		panel.setLayout(null);
+		panel.setLayout(new CardLayout(0, 0));
 		
-		JLabel lblDni = new JLabel("DNI:");
-		lblDni.setBounds(203, 141, 32, 28);
-		panel.add(lblDni);
+		panelBuscar = new CientificoBuscar();
+		panel.add(panelBuscar, null);
 		
-		txtDNI = new JTextField();
-		txtDNI.setBounds(235, 145, 86, 20);
-		panel.add(txtDNI);
-		txtDNI.setColumns(10);
-		
-		lblNomApels = new JLabel("NomApels:");
-		lblNomApels.setBounds(165, 175, 70, 28);
-		lblNomApels.setVisible(false);
-		panel.add(lblNomApels);
-		
-		txtNomApels = new JTextField();
-		txtNomApels.setEditable(false);
-		txtNomApels.setColumns(10);
-		txtNomApels.setBounds(235, 179, 86, 20);
-		txtNomApels.setVisible(false);
-		panel.add(txtNomApels);
-		
-		btnGuardar = new JButton("GUARDAR");
-		btnGuardar.setBounds(194, 233, 114, 23);
-		btnGuardar.setVisible(false);
-		btnGuardar.setActionCommand("cientificoBtnGuardar");
-		panel.add(btnGuardar);
-		
-		btnAdd = new JButton("ADD");
-		btnAdd.setBounds(194, 233, 114, 23);
-		btnAdd.setVisible(false);
-		btnAdd.setActionCommand("cientificoBtnAdd");
-		panel.add(btnAdd);
-		
+		panelModificar = new CientificoModificar();
+		panel.add(panelModificar, null);
 
 		// BOTONES		
 		btnNuevo = new JButton("Nuevo");
@@ -149,29 +120,19 @@ public class CientificoVista extends JFrame {
 		return btnSalir;
 	}
 
-
-	public JButton getBtnGuardar() {
-		return btnGuardar;
+	public JPanel getPanelBuscar() {
+		return panelBuscar;
+	}
+	
+	public JPanel getPanelRaiz() {
+		return panel;
 	}
 
-
-	public JButton getBtnAdd() {
-		return btnAdd;
+	public JPanel getPanelModificar() {
+		return panelModificar;
 	}
+	
+	
 
-
-	public JTextField getTxtDNI() {
-		return txtDNI;
-	}
-
-
-	public JTextField getTxtNomApels() {
-		return txtNomApels;
-	}
-
-
-	public JLabel getLblNomApels() {
-		return lblNomApels;
-	}
 	
 }
