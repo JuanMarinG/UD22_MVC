@@ -2,6 +2,7 @@
 .project
 .classpath
 .settings
+src/main/java/com/team5/ud22/mvc/modelo/conexion/login.properties
 target/
 pom.xml.tag
 pom.xml.releaseBackup
