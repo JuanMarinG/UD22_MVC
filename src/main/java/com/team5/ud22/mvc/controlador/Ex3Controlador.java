@@ -9,19 +9,28 @@ import javax.swing.JOptionPane;
 import com.team5.ud22.mvc.modelo.Cientifico;
 import com.team5.ud22.mvc.modelo.CientificoDAO;
 import com.team5.ud22.mvc.vista.CientificoVista;
+import com.team5.ud22.mvc.vista.MainVista;
+import com.team5.ud22.mvc.vista.ProyectosVista;
 
 public class Ex3Controlador implements ActionListener, KeyListener {
 
 	// VISTAS //
 	private CientificoVista cientificoVista;
+	private ProyectosVista proyectosVista;
+	private MainVista mainVista;
 
 	public Ex3Controlador() {
+		mainVista = new MainVista();
 		cientificoVista = new CientificoVista();
-		cientificoVista.setVisible(true);
+		proyectosVista = new ProyectosVista();
+		mainVista.setVisible(true);
 		afegirListenersBotons();
 	}
 
 	private void afegirListenersBotons() {
+		mainVista.getBtnCientificos().addActionListener(this);
+		mainVista.getBtnProyectos().addActionListener(this);
+		mainVista.getBtnRelacion().addActionListener(this);
 		cientificoVista.getTxtDNI().addKeyListener(this);
 		cientificoVista.getBtnBuscar().addActionListener(this);
 		cientificoVista.getBtnEliminar().addActionListener(this);
@@ -35,6 +44,16 @@ public class Ex3Controlador implements ActionListener, KeyListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
+		case "PROYECTOS":
+			proyectosVista.setVisible(true);
+			break;
+		case "CIENTIFICOS":
+			cientificoVista.setVisible(true);
+			break;
+		case "VER":
+			//verVista.setVisible(true);
+			JOptionPane.showMessageDialog(null, "No implementado aun");
+			break;
 		case "Buscar...":
 			reset();
 			cientificoVista.getTxtDNI().setEditable(true);
@@ -118,10 +137,10 @@ public class Ex3Controlador implements ActionListener, KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 	}
-
+	@Override
 	public void keyReleased(KeyEvent e) {
 	}
-
+	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 			String dni = cientificoVista.getTxtDNI().getText();
