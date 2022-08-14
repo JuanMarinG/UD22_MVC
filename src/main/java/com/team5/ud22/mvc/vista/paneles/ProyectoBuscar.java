@@ -48,8 +48,10 @@ public class ProyectoBuscar extends JPanel {
     	add(lblPorID);
     	
     	txtID = new JTextField();    	
+    	txtID.setDisabledTextColor(Color.LIGHT_GRAY);
+    	txtID.setText("Introduce valor y dale ENTER");
     	txtID.setColumns(10);
-    	txtID.setBounds(29, 73, 125, 20);
+    	txtID.setBounds(29, 73, 247, 20);
     	add(txtID);
     	//añadimos el keyPressed a este campo de texto
     	txtID.addKeyListener(new actionBtnsProyectoBuscar(this));    
@@ -96,16 +98,16 @@ public class ProyectoBuscar extends JPanel {
 		return txtID;
 	}
 
-	public void setTxtID(JTextField txtID) {
-		this.txtID = txtID;
+	public void setTxtID(String txtID) {
+		this.txtID.setText(txtID);
 	}
 
 	public JButton getBtnOK() {
 		return btnOK;
 	}
 
-	public String getTxtHoras() {
-		return txtHoras.getText();
+	public JTextField getTxtHoras() {
+		return txtHoras;
 	}	
 
 	public void setTxtHoras(String txtHoras) {

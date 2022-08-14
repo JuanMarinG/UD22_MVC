@@ -12,15 +12,11 @@ import com.team5.ud22.mvc.vista.paneles.ProyectoBuscar;
 public class Ex3ControladorProyecto implements ActionListener{
 
 	private ProyectosVista proyectoVista;
-	//private ProyectoBuscar Buscar;
-	private ProyectoDAO proyectoDao;
 	
 	
 	public Ex3ControladorProyecto() {		
 		proyectoVista = new ProyectosVista();		
 		proyectoVista.setVisible(true);
-		//Buscar = new ProyectoBuscar();
-		//proyectoDao = new ProyectoDAO();
 		
 		afegirListenersBotons();
 	}
@@ -56,14 +52,6 @@ public class Ex3ControladorProyecto implements ActionListener{
 		proyectoVista.getPnlForms().revalidate();		
 	}
 	
-//	public ProyectoBuscar getBuscar() {
-//		return Buscar;
-//	}	
-//
-//	public void setBuscar(ProyectoBuscar buscar) {
-//		Buscar = buscar;
-//	}
-	
 	public ProyectosVista getProyectoVista() {
 		return proyectoVista;
 	}
@@ -71,12 +59,4 @@ public class Ex3ControladorProyecto implements ActionListener{
 	public void setProyectoVista(ProyectosVista proyectoVista) {
 		this.proyectoVista = proyectoVista;
 	}
-
-//	public ProyectoDAO getProyectoDao() {
-//		return proyectoDao;
-//	}
-//
-//	public void setProyectoDao(ProyectoDAO proyectoDao) {
-//		this.proyectoDao = proyectoDao;
-//	}
 }

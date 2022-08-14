@@ -25,50 +25,55 @@ public class actionBtnsProyectoBuscar implements ActionListener, KeyListener{
 	public void actionPerformed(ActionEvent e) {
 		switch(e.getActionCommand()) {
 		case "Modificar":
-			JOptionPane.showMessageDialog(proyectoBuscar, "modificado");
+			Proyecto p = proyectoDao.getProyecto(proyectoBuscar.getTxtID().getText());		
+			Proyecto p2 = new Proyecto(p.getId(),proyectoBuscar.getTxtNombre().getText(),Integer.valueOf(proyectoBuscar.getTxtHoras().getText()));
+			proyectoDao.actualizarProyecto(p2);
+			JOptionPane.showMessageDialog(proyectoBuscar, "Proyecto modificado!");
 			break;		
 		case "Eliminar":
-			//ProyectoDAO.eliminarCientifico(proyectoVista.getPnlBuscar().getTxtID());
-			JOptionPane.showMessageDialog(proyectoBuscar, "Cientifico eliminado!");
+			proyectoDao.eliminarProyecto(proyectoBuscar.getTxtID().getText());
+			JOptionPane.showMessageDialog(proyectoBuscar, "Proyecto eliminado!");
+			clear();
 			break;
 		case "OK":
-			JOptionPane.showMessageDialog(proyectoBuscar, "ok !!");
-//			if(proyectoBuscar.getTxtID().getText() !=null) {
-//				String id = proyectoBuscar.getTxtID().getText();			
-//				Proyecto p = proyectoDao.getProyecto(id);
-//				
-//				if(p != null) {
-//					proyectoBuscar.setTxtNombre(p.getNombre());
-//					proyectoBuscar.setTxtHoras(Integer.toString(p.getHoras()));
-//				} else {
-//					JOptionPane.showMessageDialog(null,"No se ha encontrado el proyecto");
-//				}				
-//			}
-			//controlProyecto.changePanelForm(proyectosVista.getPnlBuscar());
-			//Proyecto p = ProyectoDAO.getProyecto(proyectoVista.getPnlBuscar().getTxtID());
+			clear();
 			break;		
 		}		
 	}
 
+	
+	@Override
+	public void keyPressed(KeyEvent e) {  
+		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+			String id = proyectoBuscar.getTxtID().getText();			
+			Proyecto p = proyectoDao.getProyecto(id);
+			if(p != null) {
+				proyectoBuscar.getTxtHoras().setEnabled(true);
+				proyectoBuscar.getTxtNombre().setEnabled(true);
+				proyectoBuscar.setTxtNombre(p.getNombre());
+				proyectoBuscar.setTxtHoras(Integer.toString(p.getHoras()));	
+				proyectoBuscar.getBtnModificar().setEnabled(true);
+				proyectoBuscar.getBtnEliminar().setEnabled(true);
+				
+			} else {
+				JOptionPane.showMessageDialog(null,"No se ha encontrado el proyecto");
+				clear();
+			}
+		}
+	}
+
+	private void clear() {
+		proyectoBuscar.setTxtHoras("");
+		proyectoBuscar.setTxtNombre("");
+		proyectoBuscar.setTxtID("");
+		proyectoBuscar.getTxtHoras().setEnabled(false);
+		proyectoBuscar.getTxtNombre().setEnabled(false);
+	}
+	
 	@Override
 	public void keyTyped(KeyEvent e) {}
 
 	@Override
 	public void keyReleased(KeyEvent e) {}
-	
-	@Override
-	public void keyPressed(KeyEvent e) {  // falla en la linea 59, dice que proyectoBuscar es null 
-		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-			String id = proyectoBuscar.getTxtID().getText();			
-			Proyecto p = proyectoDao.getProyecto(id);
-			
-			if(p != null) {
-				proyectoBuscar.setTxtNombre(p.getNombre());
-				proyectoBuscar.setTxtHoras(Integer.toString(p.getHoras()));
-			} else {
-				JOptionPane.showMessageDialog(null,"No se ha encontrado el proyecto");
-			}
-		}
-	}
 
 }

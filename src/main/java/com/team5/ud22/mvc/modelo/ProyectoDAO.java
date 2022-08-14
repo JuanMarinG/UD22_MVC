@@ -80,13 +80,12 @@ public class ProyectoDAO {
 		public void actualizarProyecto(Proyecto proyecto) {
 			Connection conn = null;
 			try {
-				conn = ConnectionDB.getConexion("UD22_3MVC");
-				String sql = "UPDATE proyectos" + " SET idProyecto = ?, nombre = ?, horas = ? WHERE idProyecto = ?";
+				conn = ConnectionDB.getConexion("UD22_3MVC");				
+				String sql = "UPDATE proyectos SET nombre = ?, horas = ? WHERE idProyecto = ?";
 				PreparedStatement pSt = conn.prepareStatement(sql);
-				pSt.setString(1, proyecto.getId());
-				pSt.setString(2, proyecto.getNombre());
-				pSt.setInt(3, proyecto.getHoras());
-				pSt.setString(4, proyecto.getId());
+				pSt.setString(1, proyecto.getNombre());
+				pSt.setInt(2, proyecto.getHoras());
+				pSt.setString(3, proyecto.getId());
 				pSt.executeUpdate();
 
 				pSt.close();
@@ -101,7 +100,7 @@ public class ProyectoDAO {
 			Connection conn = null;
 			try {
 				conn = ConnectionDB.getConexion("UD22_3MVC");
-				String sql = "DELETE FROM proyectos WHERE idProyecto LIKE " + id;
+				String sql = "DELETE FROM proyectos WHERE idProyecto LIKE '" + id + "'";
 				Statement st = conn.createStatement();
 				st.executeUpdate(sql);
 

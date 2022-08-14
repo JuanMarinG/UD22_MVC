@@ -44,7 +44,7 @@ public class ProyectoNuevo extends JPanel {
     	add(txtID);
     	
     	btnGuardar = new JButton("GUARDAR");
-    	btnGuardar.setBounds(198, 296, 89, 23);
+    	btnGuardar.setBounds(198, 296, 121, 23);
     	add(btnGuardar);
     	
     	lblTitle = new JLabel("Introduce los datos del nuevo proyecto");
