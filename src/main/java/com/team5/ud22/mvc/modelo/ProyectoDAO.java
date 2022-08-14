@@ -40,7 +40,7 @@ public class ProyectoDAO {
 			Proyecto proyecto = null;
 			try {
 				conn = ConnectionDB.getConexion("UD22_3MVC");
-				String sql = "SELECT * FROM Proyectos WHERE idProyecto = " + id;
+				String sql = "SELECT * FROM Proyectos WHERE idProyecto = '" + id + "'";
 				Statement st = conn.createStatement();
 				ResultSet rs = st.executeQuery(sql);
 				if (rs.next()) {
