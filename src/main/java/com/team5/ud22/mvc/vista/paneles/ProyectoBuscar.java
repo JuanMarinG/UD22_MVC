@@ -23,8 +23,6 @@ public class ProyectoBuscar extends JPanel {
 	private JTextField txtNombre, txtID, txtHoras;
 	private JButton btnOK, btnModificar, btnEliminar;
 	
-	ProyectoDAO proyectoDao;
-	   
     public ProyectoBuscar(){
     	
     	setLayout(null);
@@ -54,12 +52,12 @@ public class ProyectoBuscar extends JPanel {
     	txtID.setBounds(29, 73, 125, 20);
     	add(txtID);
     	//añadimos el keyPressed a este campo de texto
-    	txtID.addKeyListener(new actionBtnsProyectoBuscar());    
+    	txtID.addKeyListener(new actionBtnsProyectoBuscar(this));    
     	
     	btnOK = new JButton("OK");
     	btnOK.setBounds(79, 296, 89, 23);
     	add(btnOK);
-    	btnOK.addActionListener(new actionBtnsProyectoBuscar());
+    	btnOK.addActionListener(new actionBtnsProyectoBuscar(this));
     	
     	JLabel lblHoras = new JLabel("Horas de trabajo");
     	lblHoras.setBounds(29, 210, 99, 20);
@@ -75,13 +73,13 @@ public class ProyectoBuscar extends JPanel {
     	btnModificar.setEnabled(false);
     	btnModificar.setBounds(207, 296, 89, 23);
     	add(btnModificar);
-    	btnModificar.addActionListener(new actionBtnsProyectoBuscar());
+    	btnModificar.addActionListener(new actionBtnsProyectoBuscar(this));
     	
     	btnEliminar = new JButton("Eliminar");
     	btnEliminar.setEnabled(false);
     	btnEliminar.setBounds(346, 296, 89, 23);
     	add(btnEliminar);
-    	btnEliminar.addActionListener(new actionBtnsProyectoBuscar());
+    	btnEliminar.addActionListener(new actionBtnsProyectoBuscar(this));
     	    	
     }
     

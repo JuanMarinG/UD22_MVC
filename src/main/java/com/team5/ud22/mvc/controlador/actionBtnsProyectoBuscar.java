@@ -15,8 +15,11 @@ import com.team5.ud22.mvc.vista.paneles.ProyectoBuscar;
 public class actionBtnsProyectoBuscar implements ActionListener, KeyListener{
 	
 	ProyectoBuscar proyectoBuscar;
-	ProyectoDAO proyectoDao;
-	ProyectosVista proyectoVista;
+	ProyectoDAO proyectoDao = new ProyectoDAO();
+	
+	public actionBtnsProyectoBuscar(ProyectoBuscar proyectoBuscar) {
+		this.proyectoBuscar = proyectoBuscar;
+	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
