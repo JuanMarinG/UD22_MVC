@@ -71,13 +71,6 @@ public class ProyectoControlador implements ActionListener{
 		proyectoVista.getPnlForms().repaint();
 		proyectoVista.getPnlForms().revalidate();		
 	}
-	
-	public ProyectosVista getProyectoVista() {
-		return proyectoVista;
-	}
 
-	public void setProyectoVista(ProyectosVista proyectoVista) {
-		this.proyectoVista = proyectoVista;
-	}
 }
 

@@ -120,17 +120,8 @@ public class ProyectoBuscar extends JPanel {
 		return btnModificar;
 	}
 
-	public void setBtnModificar(JButton btnModificar) {
-		this.btnModificar = btnModificar;
-	}
-
 	public JButton getBtnEliminar() {
 		return btnEliminar;
 	}
-
-	public void setBtnEliminar(JButton btnEliminar) {
-		this.btnEliminar = btnEliminar;
-	}
-	
 
 }

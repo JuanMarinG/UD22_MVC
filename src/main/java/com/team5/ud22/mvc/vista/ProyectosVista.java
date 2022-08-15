@@ -3,7 +3,6 @@ package com.team5.ud22.mvc.vista;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Font;
 
 import javax.swing.JButton;
@@ -20,7 +19,7 @@ import javax.swing.border.LineBorder;
 
 public class ProyectosVista extends JFrame {
 
-	protected static final Container content = null;
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;	
 	private JButton btnNuevo,btnBuscar,btnSalir,btnListarPs;
 	private JPanel pnlForms;
@@ -38,8 +37,6 @@ public class ProyectosVista extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		setBounds(300, 200, 700, 420); // X Y coordinates of the application and its height and length
-
-
 
 		contentPane = new JPanel();		
 		contentPane.setBackground(new Color(51, 153, 204));
@@ -83,7 +80,6 @@ public class ProyectosVista extends JFrame {
 		pnlBuscar = new ProyectoBuscar();	
 		
 
-		
 		// BOTONES		
 		btnNuevo = new JButton("Nuevo");
 		btnNuevo.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -123,7 +119,6 @@ public class ProyectosVista extends JFrame {
 		return pnlForms;
 	}
 
-
 	public ProyectoNuevo getPnlNuevo() {
 		return pnlNuevo;
 	}
@@ -143,6 +138,5 @@ public class ProyectosVista extends JFrame {
 	public void setTxtListar(String txtListar) {
 		this.txtListar.setText(txtListar);
 	}
-
 
 }
