@@ -6,17 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
-
-import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
-import javax.swing.border.MatteBorder;
-
 import com.team5.ud22.mvc.controlador.actionBtnsProyectoBuscar;
-import com.team5.ud22.mvc.modelo.Proyecto;
-import com.team5.ud22.mvc.modelo.ProyectoDAO;
-
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyAdapter;
 
 
 public class ProyectoBuscar extends JPanel {

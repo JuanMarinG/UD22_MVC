@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 
 import com.team5.ud22.mvc.modelo.Proyecto;
 import com.team5.ud22.mvc.modelo.ProyectoDAO;
-import com.team5.ud22.mvc.vista.paneles.ProyectoBuscar;
 import com.team5.ud22.mvc.vista.paneles.ProyectoNuevo;
 
 public class actionProyectoNuevo implements ActionListener{

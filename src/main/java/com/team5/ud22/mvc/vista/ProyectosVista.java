@@ -14,12 +14,7 @@ import javax.swing.JSeparator;
 
 import com.team5.ud22.mvc.vista.paneles.ProyectoBuscar;
 import com.team5.ud22.mvc.vista.paneles.ProyectoNuevo;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTable;
 import javax.swing.JTextArea;
-import java.awt.Rectangle;
-import java.awt.Dimension;
 import javax.swing.border.LineBorder;
 
 

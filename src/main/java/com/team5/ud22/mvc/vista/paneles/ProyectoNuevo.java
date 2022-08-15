@@ -9,9 +9,6 @@ import javax.swing.JTextField;
 
 import com.team5.ud22.mvc.controlador.actionProyectoNuevo;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
 public class ProyectoNuevo extends JPanel {
 
 	private static final long serialVersionUID = 1L;

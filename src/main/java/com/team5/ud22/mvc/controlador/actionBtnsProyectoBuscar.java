@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 
 import com.team5.ud22.mvc.modelo.Proyecto;
 import com.team5.ud22.mvc.modelo.ProyectoDAO;
-import com.team5.ud22.mvc.vista.ProyectosVista;
 import com.team5.ud22.mvc.vista.paneles.ProyectoBuscar;
 
 public class actionBtnsProyectoBuscar implements ActionListener, KeyListener{
