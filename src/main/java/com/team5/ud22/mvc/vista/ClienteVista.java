@@ -140,14 +140,6 @@ public class ClienteVista extends JFrame {
 	public JButton getBtnEliminar() {
 		return btnEliminar;
 	}
-
-	public JButton getBtnModificar() {
-		return btnModificar;
-	}
-
-	public JButton getBtnEliminar() {
-		return btnEliminar;
-	}
   
 	public JButton getBtnBuscar() {
 		return btnBuscar;
