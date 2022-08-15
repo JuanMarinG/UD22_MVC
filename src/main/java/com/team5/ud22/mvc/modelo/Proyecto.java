@@ -41,7 +41,7 @@ public class Proyecto {
 
 	@Override
 	public String toString() {
-		return "Proyecto [id=" + id + ", nombre=" + nombre + ", horas=" + horas + "]";
+		return "\n Proyecto ID " + id.toUpperCase() + "\n  - Nombre: " + nombre + "\n  - Horas: " + horas;
 	}
 	
 }
