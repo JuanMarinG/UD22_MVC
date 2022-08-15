@@ -25,7 +25,7 @@ public class CientificoVista extends JFrame {
 
 		/* Definition of the window */
 		setTitle("Cientificos"); // PopUp window title
-		setBounds(700, 200, 700, 420); // X Y coordinates of the application and its height and length
+		setBounds(300, 200, 700, 420); // X Y coordinates of the application and its height and length
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // Close the window when the operation is close
 		//setVisible(true);
 		
