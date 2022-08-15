@@ -43,7 +43,7 @@ public class CientificoDAO {
 		Cientifico cientifico = null;
 		try {			
 			conn = ConnectionDB.getConexion("UD22_3MVC");
-			String sql = "SELECT * FROM Cientificos WHERE DNI LIKE "+ dni;
+			String sql = "SELECT * FROM Cientificos WHERE DNI LIKE '"+ dni + "'";
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(sql);
 			if (rs.next()){
