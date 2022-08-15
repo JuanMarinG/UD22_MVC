@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.border.MatteBorder;
@@ -17,14 +18,17 @@ import com.team5.ud22.mvc.modelo.ProyectoDAO;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
 
+
 public class ProyectoBuscar extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private JTextField txtNombre, txtID, txtHoras;
+
 	private JButton btnOK, btnModificar, btnEliminar;
 	
     public ProyectoBuscar(){
     	
+
     	setLayout(null);
     	setBackground(new Color(51, 153, 204));
     	setBounds(173, 11, 501, 359);
@@ -47,6 +51,7 @@ public class ProyectoBuscar extends JPanel {
     	lblPorID.setBounds(29, 43, 146, 20);
     	add(lblPorID);
     	
+
     	txtID = new JTextField();    	
     	txtID.setDisabledTextColor(Color.LIGHT_GRAY);
     	txtID.setText("Introduce valor y dale ENTER");
@@ -55,11 +60,14 @@ public class ProyectoBuscar extends JPanel {
     	add(txtID);
     	//añadimos el keyPressed a este campo de texto
     	txtID.addKeyListener(new actionBtnsProyectoBuscar(this));    
+
     	
     	btnOK = new JButton("OK");
     	btnOK.setBounds(79, 296, 89, 23);
     	add(btnOK);
+
     	btnOK.addActionListener(new actionBtnsProyectoBuscar(this));
+
     	
     	JLabel lblHoras = new JLabel("Horas de trabajo");
     	lblHoras.setBounds(29, 210, 99, 20);
@@ -71,6 +79,7 @@ public class ProyectoBuscar extends JPanel {
     	add(txtHoras);
     	txtHoras.setColumns(10);
     	
+
     	btnModificar = new JButton("Modificar");
     	btnModificar.setEnabled(false);
     	btnModificar.setBounds(207, 296, 89, 23);
@@ -82,12 +91,14 @@ public class ProyectoBuscar extends JPanel {
     	btnEliminar.setBounds(346, 296, 89, 23);
     	add(btnEliminar);
     	btnEliminar.addActionListener(new actionBtnsProyectoBuscar(this));
+
     	    	
     }
     
     public JTextField getTxtNombre() {
 		return txtNombre;
 	}
+
 
 	public void setTxtNombre(String nombre) {
 		this.txtNombre.setText(nombre); 
@@ -100,6 +111,7 @@ public class ProyectoBuscar extends JPanel {
 
 	public void setTxtID(String txtID) {
 		this.txtID.setText(txtID);
+
 	}
 
 	public JButton getBtnOK() {
@@ -130,4 +142,5 @@ public class ProyectoBuscar extends JPanel {
 		this.btnEliminar = btnEliminar;
 	}
 	
+
 }

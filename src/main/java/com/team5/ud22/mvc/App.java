@@ -1,10 +1,32 @@
 package com.team5.ud22.mvc;
 
-import com.team5.ud22.mvc.controlador.ProyectoControlador;
+import javax.swing.JOptionPane;
+import com.team5.ud22.mvc.controlador.ClienteControlador;
+import com.team5.ud22.mvc.controlador.Ex3Controlador;
+import com.team5.ud22.mvc.controlador.VideoControlador;
 
+public class App {
 
-public class App{
-    public static void main( String[] args ){
-        ProyectoControlador control = new ProyectoControlador();
+    public static void main(String[] args) {
+        // De moment treballo amb l'ex 3, despres descomentar linia 16
+        String n = "3";
+        do {
+            System.out.println("ERROR");
+            //n = JOptionPane.showInputDialog("Ejercicio [1,2,3] ?");
+        } while(!n.equals("3"));
+        System.out.println("ok");
+        switch(n) {
+        case "1":
+            //new Ex1Controlador().display();
+            break;
+        case "2":
+            //new Ex2Controlador().display();
+            break;
+        case "3":
+            new Ex3Controlador().display();
+            break;
+        }
+
     }
+
 }

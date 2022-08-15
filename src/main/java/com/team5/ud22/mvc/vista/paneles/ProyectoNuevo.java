@@ -18,6 +18,7 @@ public class ProyectoNuevo extends JPanel {
 	private JTextField txtNombre, txtID, txtHoras;
 	private JButton btnGuardar;
 	private JLabel lblTitle, lblHoras;
+
 	
 	/**
 	 * Create the panel.
@@ -49,6 +50,7 @@ public class ProyectoNuevo extends JPanel {
     	btnGuardar.setBounds(198, 296, 121, 23);
     	add(btnGuardar);
     	btnGuardar.addActionListener(new actionProyectoNuevo(this));
+
     	
     	lblTitle = new JLabel("Introduce los datos del nuevo proyecto");
     	lblTitle.setBounds(142, 23, 294, 14);
@@ -87,4 +89,5 @@ public class ProyectoNuevo extends JPanel {
 	public void setTxtHoras(String txtHoras) {
 		this.txtHoras.setText(txtHoras);
 	}
+
 }

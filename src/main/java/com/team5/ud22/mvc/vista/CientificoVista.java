@@ -7,27 +7,20 @@ import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
 
-import com.team5.ud22.mvc.vista.paneles.PanelTest;
+import com.team5.ud22.mvc.vista.paneles.cientifico.CientificoBuscar;
+import com.team5.ud22.mvc.vista.paneles.cientifico.CientificoModificar;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.CardLayout;
+import java.awt.Color;
+
 
 @SuppressWarnings("serial")
-public class ClienteVista extends JFrame {
+public class CientificoVista extends JFrame {
 
-	// ATTRIBUTES
-	protected static final Container content = null;
+	private JPanel contentPane, panel, panelBuscar, panelModificar;
 	private JButton btnNuevo,btnModificar,btnEliminar,btnBuscar,btnSalir;
-	public JLabel consulta;
-	private JPanel contentPane;
-	
-	private JPanel panelForms,cNuevo,cModificar,cEliminar,cBuscar;
 
-	// CONSTRUCTOR VISTA
-	
-	public ClienteVista() {
+	public CientificoVista() {
 		setBounds(150, 150, 800, 375);
 
 		/* Definition of the window */
@@ -43,56 +36,51 @@ public class ClienteVista extends JFrame {
 		setContentPane(contentPane);
 				
 		// PANELS
-		panelForms = new JPanel();
-		panelForms.setBounds(173, 11, 501, 359);
-		contentPane.add(panelForms);
-		panelForms.setLayout(new CardLayout(0, 0));
+		panel = new JPanel();
+		panel.setBounds(173, 63, 501, 307);
+		contentPane.add(panel);
+		panel.setLayout(new CardLayout(0, 0));
 		
-		cNuevo = new PanelTest();
-		cModificar = new JPanel();
-		cEliminar = new JPanel();
-		cBuscar = new JPanel();
+		panelBuscar = new CientificoBuscar();
+		panel.add(panelBuscar, null);
 		
-		cNuevo.setPreferredSize(new Dimension(300, 40));
-		
-		cModificar.setBackground(Color.yellow);
-		cModificar.setPreferredSize(new Dimension(300, 40));
-		
-		cEliminar.setBackground(Color.BLACK);
-		cEliminar.setPreferredSize(new Dimension(300, 40));
-		
-		cBuscar.setBackground(Color.WHITE);
-		cBuscar.setPreferredSize(new Dimension(300, 40));
+		panelModificar = new CientificoModificar();
+		panel.add(panelModificar, null);
 
 		// BOTONES		
 		btnNuevo = new JButton("Nuevo");
 		btnNuevo.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnNuevo.setBounds(28, 128, 89, 23);
+		btnNuevo.setActionCommand("cientificoBtnNuevo");
 		contentPane.add(btnNuevo);		
 		
 		btnModificar = new JButton("Modificar");
+		btnModificar.setEnabled(false);
 		btnModificar.setBounds(27, 167, 89, 23);
+		btnModificar.setActionCommand("cientificoBtnModificar");
 		contentPane.add(btnModificar);	
 		
 		btnEliminar = new JButton("Eliminar");
+		btnEliminar.setEnabled(false);
 		btnEliminar.setBounds(28, 201, 89, 23);
+		btnEliminar.setActionCommand("cientificoBtnEliminar");
 		contentPane.add(btnEliminar);
 		
 		btnBuscar = new JButton("Buscar...");
 		btnBuscar.setBounds(28, 69, 89, 23);
+		btnBuscar.setActionCommand("cientificoBtnBuscar");
 		contentPane.add(btnBuscar);
-		
-		
 				
 		btnSalir = new JButton("Salir");
 		btnSalir.setBounds(28, 347, 89, 23);
+		btnSalir.setActionCommand("cientificoBtnSalir");
 		contentPane.add(btnSalir);
 		
 		
-		JLabel lblTitulo = new JLabel("CLIENTES");
+		JLabel lblTitulo = new JLabel("CIENTIFICOS");
 		lblTitulo.setForeground(new Color(255, 255, 255));
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblTitulo.setBounds(34, 11, 83, 23);
+		lblTitulo.setBounds(28, 11, 108, 23);
 		contentPane.add(lblTitulo);
 
 		JSeparator separator = new JSeparator();
@@ -105,56 +93,46 @@ public class ClienteVista extends JFrame {
 
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setBounds(10, 333, 155, 2);
-		contentPane.add(separator_1_1);	
-
-	}	
-	
-	public JPanel getPanelForms() {
-		return panelForms;
-	}
-	
-	public JPanel getcNuevo() {
-		return cNuevo;
-	}
-
-	public JPanel getcModificar() {
-		return cModificar;
-	}
-
-	public JPanel getcEliminar() {
-		return cEliminar;
-	}
-
-	public JPanel getcBuscar() {
-		return cBuscar;
+		getContentPane().add(separator_1_1);	
 	}
 	
 	public JButton getBtnNuevo() {
 		return btnNuevo;
 	}
 
-	public JButton getBtnModificar() {
-		return btnModificar;
-	}
-
-	public JButton getBtnEliminar() {
-		return btnEliminar;
-	}
 
 	public JButton getBtnModificar() {
 		return btnModificar;
 	}
 
+
 	public JButton getBtnEliminar() {
 		return btnEliminar;
 	}
-  
+
+
 	public JButton getBtnBuscar() {
 		return btnBuscar;
 	}
+
 
 	public JButton getBtnSalir() {
 		return btnSalir;
 	}
 
+	public JPanel getPanelBuscar() {
+		return panelBuscar;
+	}
+	
+	public JPanel getPanelRaiz() {
+		return panel;
+	}
+
+	public JPanel getPanelModificar() {
+		return panelModificar;
+	}
+	
+	
+
+	
 }
