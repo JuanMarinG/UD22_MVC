@@ -38,7 +38,6 @@ public class Ex3Controlador implements ActionListener {
 			cientifico.display();
 			break;
 		case "ex3BtnProyectos":
-			new ProyectoControlador();
 			proyecto.display();
 			break;
 		case "ex3BtnAsignado":

@@ -20,9 +20,12 @@ public class ProyectoControlador implements ActionListener{
 	
 	public ProyectoControlador() {		
 		proyectoVista = new ProyectosVista();		
-		proyectoVista.setVisible(true);
-		
+				
 		afegirListenersBotons();
+	}
+	
+	public void display() {
+		proyectoVista.setVisible(true);
 	}
 
 	private void afegirListenersBotons() {
