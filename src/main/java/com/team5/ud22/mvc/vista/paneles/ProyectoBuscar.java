@@ -6,16 +6,29 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.border.MatteBorder;
+
+import com.team5.ud22.mvc.controlador.actionBtnsProyectoBuscar;
+import com.team5.ud22.mvc.modelo.Proyecto;
+import com.team5.ud22.mvc.modelo.ProyectoDAO;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyAdapter;
+
 
 public class ProyectoBuscar extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private JTextField txtNombre, txtID, txtHoras;
-	private JButton btnOK;
-   
+
+	private JButton btnOK, btnModificar, btnEliminar;
+	
     public ProyectoBuscar(){
+    	
+
     	setLayout(null);
     	setBackground(new Color(51, 153, 204));
     	setBounds(173, 11, 501, 359);
@@ -38,14 +51,23 @@ public class ProyectoBuscar extends JPanel {
     	lblPorID.setBounds(29, 43, 146, 20);
     	add(lblPorID);
     	
-    	txtID = new JTextField();
+
+    	txtID = new JTextField();    	
+    	txtID.setDisabledTextColor(Color.LIGHT_GRAY);
+    	txtID.setText("Introduce valor y dale ENTER");
     	txtID.setColumns(10);
-    	txtID.setBounds(29, 73, 125, 20);
+    	txtID.setBounds(29, 73, 247, 20);
     	add(txtID);
+    	//añadimos el keyPressed a este campo de texto
+    	txtID.addKeyListener(new actionBtnsProyectoBuscar(this));    
+
     	
     	btnOK = new JButton("OK");
     	btnOK.setBounds(79, 296, 89, 23);
     	add(btnOK);
+
+    	btnOK.addActionListener(new actionBtnsProyectoBuscar(this));
+
     	
     	JLabel lblHoras = new JLabel("Horas de trabajo");
     	lblHoras.setBounds(29, 210, 99, 20);
@@ -57,15 +79,19 @@ public class ProyectoBuscar extends JPanel {
     	add(txtHoras);
     	txtHoras.setColumns(10);
     	
-    	JButton btnModificar = new JButton("Modifica");
+
+    	btnModificar = new JButton("Modificar");
     	btnModificar.setEnabled(false);
     	btnModificar.setBounds(207, 296, 89, 23);
     	add(btnModificar);
+    	btnModificar.addActionListener(new actionBtnsProyectoBuscar(this));
     	
-    	JButton btnElimina = new JButton("Eliminar");
-    	btnElimina.setEnabled(false);
-    	btnElimina.setBounds(346, 296, 89, 23);
-    	add(btnElimina);
+    	btnEliminar = new JButton("Eliminar");
+    	btnEliminar.setEnabled(false);
+    	btnEliminar.setBounds(346, 296, 89, 23);
+    	add(btnEliminar);
+    	btnEliminar.addActionListener(new actionBtnsProyectoBuscar(this));
+
     	    	
     }
     
@@ -73,16 +99,19 @@ public class ProyectoBuscar extends JPanel {
 		return txtNombre;
 	}
 
-	public void setTxtNombre(JTextField txtNombre) {
-		this.txtNombre = txtNombre;
+
+	public void setTxtNombre(String nombre) {
+		this.txtNombre.setText(nombre); 
 	}
 
-	public String getTxtID() {
-		return txtID.getText();
+	
+	public JTextField getTxtID() {
+		return txtID;
 	}
 
-	public void setTxtID(JTextField txtID) {
-		this.txtID = txtID;
+	public void setTxtID(String txtID) {
+		this.txtID.setText(txtID);
+
 	}
 
 	public JButton getBtnOK() {
@@ -91,9 +120,27 @@ public class ProyectoBuscar extends JPanel {
 
 	public JTextField getTxtHoras() {
 		return txtHoras;
+	}	
+
+	public void setTxtHoras(String txtHoras) {
+		this.txtHoras.setText(txtHoras);
+	}
+	
+	public JButton getBtnModificar() {
+		return btnModificar;
 	}
 
-	public void setTxtHoras(JTextField txtHoras) {
-		this.txtHoras = txtHoras;
+	public void setBtnModificar(JButton btnModificar) {
+		this.btnModificar = btnModificar;
 	}
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(JButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+	
+
 }

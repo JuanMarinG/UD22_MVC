@@ -6,7 +6,9 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
+
 import com.team5.ud22.mvc.vista.paneles.PanelTest;
+
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -50,8 +52,6 @@ public class ClienteVista extends JFrame {
 		cModificar = new JPanel();
 		cEliminar = new JPanel();
 		cBuscar = new JPanel();
-	
-		
 		
 		cNuevo.setPreferredSize(new Dimension(300, 40));
 		
@@ -141,6 +141,14 @@ public class ClienteVista extends JFrame {
 		return btnEliminar;
 	}
 
+	public JButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+  
 	public JButton getBtnBuscar() {
 		return btnBuscar;
 	}
@@ -148,4 +156,5 @@ public class ClienteVista extends JFrame {
 	public JButton getBtnSalir() {
 		return btnSalir;
 	}
+
 }

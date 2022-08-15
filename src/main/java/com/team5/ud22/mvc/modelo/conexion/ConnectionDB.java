@@ -11,56 +11,56 @@ import java.util.Properties;
 
 public class ConnectionDB {
 
-	private static Connection conexion = null;
+    private static Connection conexion = null;
 
-	private static void openConnection(String db) {
+    private static void openConnection(String db) {
 
-		String user = "", password = "";
-		String urlBaseDades = "jdbc:mysql://localhost:3306/"+db+"?useTimezone=true&serverTimezone=UTC";
+        String user = "", password = "";
+        String urlBaseDades = "jdbc:mysql://localhost:3306/"+db+"?useTimezone=true&serverTimezone=UTC";
 
-		// Carregar user i password
-		try (InputStream input = new FileInputStream("src/main/java/com/team5/ud22/mvc/modelo/conexion/login.properties")) {
-			Properties prop = new Properties();
-			prop.load(input);
-			user = prop.getProperty("user");
-			password = prop.getProperty("password");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conexion = DriverManager.getConnection(urlBaseDades, user, password);			
+        // Carregar user i password
+        try (InputStream input = new FileInputStream("src/main/java/com/team5/ud22/mvc/modelo/conexion/login.properties")) {
+            Properties prop = new Properties();
+            prop.load(input);
+            user = prop.getProperty("user");
+            password = prop.getProperty("password");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-		} catch (SQLException | ClassNotFoundException e) {			
-			e.printStackTrace();
-		}
-	}
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexion = DriverManager.getConnection(urlBaseDades, user, password);
 
-	public static void closeConnection() {
-		try {
-			conexion.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
-	public static Connection getConexion(String db) {
-		try {
-			if(conexion == null || conexion.isClosed())
-				openConnection(db);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return conexion;
-	}
-	
-	public static void clear(String db, String tabla) {
-		try {
-			String Query = "DELETE FROM "+tabla;
-			Statement st = getConexion(db).createStatement();
-			st.executeUpdate(Query);
-		} catch (SQLException ex) {}
-	}
-		
+    public static void closeConnection() {
+        try {
+            conexion.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Connection getConexion(String db) {
+        try {
+            if(conexion == null || conexion.isClosed())
+                openConnection(db);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return conexion;
+    }
+
+    public static void clear(String db, String tabla) {
+        try {
+            String Query = "DELETE FROM "+tabla;
+            Statement st = getConexion(db).createStatement();
+            st.executeUpdate(Query);
+        } catch (SQLException ex) {}
+    }
+
 }
