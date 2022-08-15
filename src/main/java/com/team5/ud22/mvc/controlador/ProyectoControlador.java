@@ -11,13 +11,13 @@ import com.team5.ud22.mvc.modelo.ProyectoDAO;
 import com.team5.ud22.mvc.vista.ProyectosVista;
 import com.team5.ud22.mvc.vista.paneles.ProyectoBuscar;
 
-public class Ex3ControladorProyecto implements ActionListener{
+public class ProyectoControlador implements ActionListener{
 
 	private ProyectosVista proyectoVista;
 	private ProyectoDAO proyectoDao = new ProyectoDAO();
 	
 	
-	public Ex3ControladorProyecto() {		
+	public ProyectoControlador() {		
 		proyectoVista = new ProyectosVista();		
 		proyectoVista.setVisible(true);
 		
