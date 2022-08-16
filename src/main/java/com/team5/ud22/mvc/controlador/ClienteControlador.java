@@ -14,9 +14,12 @@ public class ClienteControlador implements ActionListener{
 	// VISTAS //
 	private ClienteVista clienteVista;
 	
-	public ClienteControlador() {
-		clienteVista = new ClienteVista();
+	public void display() {
 		clienteVista.setVisible(true);
+	}
+	
+	public ClienteControlador() {
+		clienteVista = new ClienteVista();		
 		afegirListenersBotons();
 	}
 	
