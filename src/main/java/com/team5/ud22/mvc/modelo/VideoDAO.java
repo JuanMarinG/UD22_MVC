@@ -2,7 +2,10 @@ package com.team5.ud22.mvc.modelo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.team5.ud22.mvc.modelo.conexion.ConnectionDB;
 
@@ -62,8 +65,34 @@ public class VideoDAO {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+			
+	//LISTAR VIDEOS
 		
+			public static  List<Video> getVideo() {
+				List<Video> proyectos = new ArrayList<Video>();
+				Connection conn = null;
+				try {
+					conn = ConnectionDB.getConexion("UD22_2MVC");
+					String sql = "SELECT * FROM Videos";
+					Statement st = conn.createStatement();
+					ResultSet rs = st.executeQuery(sql);
+					while (rs.next()) {
+						
+						Video.add(new Video(rs.getString("id"), rs.getString("title"), rs.getString("Director"), 0));
+					}
+					rs.close();
+					st.close();
+					ConnectionDB.closeConnection();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+				return getVideo();
+			}
+
 		
+			
 	}
 
-}
+

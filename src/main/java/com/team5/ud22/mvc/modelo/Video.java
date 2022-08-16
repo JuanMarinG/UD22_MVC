@@ -53,6 +53,13 @@ public class Video {
 	public String toString() {
 		return "Video [id=" + id + ", title=" + title + ", director=" + director + ", cli_id=" + cli_id + "]";
 	}
+
+	public static void add(Video video) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	
 	
 }
