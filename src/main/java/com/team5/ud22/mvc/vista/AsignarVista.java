@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JList;
+import javax.swing.JTextArea;
 
 public class AsignarVista extends JFrame {
 
@@ -37,13 +38,13 @@ public class AsignarVista extends JFrame {
 		lblNewLabel_2.setBounds(10, 11, 264, 42);
 		getContentPane().add(lblNewLabel_2);
 		
-		JList list = new JList();
-		list.setBounds(10, 89, 161, 23);
-		getContentPane().add(list);
+		JList listProyecto = new JList();
+		listProyecto.setBounds(10, 89, 161, 23);
+		getContentPane().add(listProyecto);
 		
-		JList list_1 = new JList();
-		list_1.setBounds(10, 145, 161, 23);
-		getContentPane().add(list_1);
+		JList listCientifico = new JList();
+		listCientifico.setBounds(10, 145, 161, 23);
+		getContentPane().add(listCientifico);
 		
 		
 	}
