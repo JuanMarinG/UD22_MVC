@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.team5.ud22.mvc.controlador.actionPnlVideoNuevo;
+
 
 public class VideoNuevo extends JPanel {
 
@@ -63,7 +65,7 @@ public class VideoNuevo extends JPanel {
     	btnGuardar = new JButton("GUARDAR");    	
     	btnGuardar.setBounds(198, 296, 121, 23);
     	add(btnGuardar);
-    	//btnGuardar.addActionListener(new actionProyectoNuevo(this));
+    	btnGuardar.addActionListener(new actionPnlVideoNuevo(this));
     	    	
 	}
 	

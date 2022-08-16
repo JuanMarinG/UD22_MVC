@@ -64,9 +64,6 @@ public class ClienteVista extends JFrame {
 		cEliminar.setBackground(Color.BLACK);
 		cEliminar.setPreferredSize(new Dimension(300, 40));
 		
-
-		
-
 		// BOTONES		
 		btnNuevo = new JButton("Nuevo");
 		btnNuevo.setFont(new Font("Tahoma", Font.BOLD, 11));

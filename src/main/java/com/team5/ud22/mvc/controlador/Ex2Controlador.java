@@ -34,7 +34,7 @@ public class Ex2Controlador implements ActionListener{
 		case "ex2BtnClientes":
 			cliente.display();
 			break;
-		case "ex3BtnVideos":
+		case "ex2BtnVideos":
 			video.display();
 			break;
 		default:

@@ -19,7 +19,7 @@ public class VideoVista extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;	
-	private JButton btnNuevo,btnBuscar,btnSalir,btnListarPs;
+	private JButton btnNuevo,btnBuscar,btnSalir,btnListarVs;
 	private JPanel pnlForms;
 	private VideoNuevo pnlNuevo;
 	private VideoBuscar pnlBuscar;
@@ -90,9 +90,9 @@ public class VideoVista extends JFrame {
 		contentPane.add(btnSalir);
 
 		
-		btnListarPs = new JButton("Mostrar todos");
-		btnListarPs.setBounds(28, 75, 121, 23);
-		contentPane.add(btnListarPs);
+		btnListarVs = new JButton("Mostrar todos");
+		btnListarVs.setBounds(28, 75, 121, 23);
+		contentPane.add(btnListarVs);
 
 	}
 
@@ -121,8 +121,8 @@ public class VideoVista extends JFrame {
 		return pnlBuscar;
 	}
 	
-	public JButton getBtnListarPs() {
-		return btnListarPs;
+	public JButton getBtnListarVs() {
+		return btnListarVs;
 	}
 	
 	public JTextArea getTxtListar() {

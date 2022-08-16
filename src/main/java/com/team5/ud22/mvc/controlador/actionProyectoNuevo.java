@@ -18,6 +18,7 @@ public class actionProyectoNuevo implements ActionListener{
 	public actionProyectoNuevo(ProyectoNuevo proyectoNuevo) {
 		this.proyectoNuevo = proyectoNuevo;
 	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		

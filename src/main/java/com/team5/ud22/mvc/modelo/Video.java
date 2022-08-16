@@ -10,7 +10,6 @@ public class Video {
 	public Video() {}
 	
 	public Video(String id, String title, String director, int cli_id) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.director = director;
@@ -54,12 +53,5 @@ public class Video {
 		return "Video [id=" + id + ", title=" + title + ", director=" + director + ", cli_id=" + cli_id + "]";
 	}
 
-	public static void add(Video video) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	
 	
 }

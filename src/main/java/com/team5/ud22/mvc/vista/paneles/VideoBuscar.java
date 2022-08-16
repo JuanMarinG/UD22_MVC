@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.team5.ud22.mvc.controlador.actionPnlVideoBuscar;
+
 
 public class VideoBuscar extends JPanel {
 
@@ -47,7 +49,7 @@ public class VideoBuscar extends JPanel {
     	txtID.setBounds(207, 72, 247, 20);
     	add(txtID);
     	//añadimos el keyPressed a este campo de texto
-    	//txtID.addKeyListener(new actionVideoBuscar(this)); 
+    	txtID.addKeyListener(new actionPnlVideoBuscar(this)); 
     	
     	JLabel lblCliID = new JLabel("Cliente_ID");
     	lblCliID.setBounds(87, 210, 105, 20);
@@ -72,19 +74,19 @@ public class VideoBuscar extends JPanel {
     	btnOK = new JButton("OK");
     	btnOK.setBounds(79, 296, 89, 23);
     	add(btnOK);
-    	//btnOK.addActionListener(new actionVideoBuscar(this));
+    	btnOK.addActionListener(new actionPnlVideoBuscar(this));
 
     	btnModificar = new JButton("Modificar");
     	btnModificar.setEnabled(false);
     	btnModificar.setBounds(207, 296, 89, 23);
     	add(btnModificar);
-    	//btnModificar.addActionListener(new actionVideoBuscar(this));
+    	btnModificar.addActionListener(new actionPnlVideoBuscar(this));
     	
     	btnEliminar = new JButton("Eliminar");
     	btnEliminar.setEnabled(false);
     	btnEliminar.setBounds(346, 296, 89, 23);
     	add(btnEliminar);
-    	//btnEliminar.addActionListener(new actionVideooBuscar(this));
+    	btnEliminar.addActionListener(new actionPnlVideoBuscar(this));
     	
 	}
 	

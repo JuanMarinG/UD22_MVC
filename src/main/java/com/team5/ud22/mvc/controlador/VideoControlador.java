@@ -1,6 +1,7 @@
 package com.team5.ud22.mvc.controlador;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JPanel;
@@ -9,12 +10,14 @@ import com.team5.ud22.mvc.modelo.Video;
 import com.team5.ud22.mvc.modelo.VideoDAO;
 import com.team5.ud22.mvc.vista.VideoVista;
 
-public class VideoControlador {
+public class VideoControlador implements ActionListener{
 	
 	private VideoVista videoVista;
+	private VideoDAO videoDao = new VideoDAO();
 	
 	public VideoControlador() {
 		videoVista = new VideoVista();
+		ListenersBotons();
 	}
 	
 	public void display() {
@@ -22,24 +25,24 @@ public class VideoControlador {
 	}
 
 	private void ListenersBotons() {
-		videoVista.getBtnBuscar().addActionListener(null);
-		videoVista.getBtnNuevo().addActionListener(null);
-		videoVista.getBtnSalir().addActionListener(null);
-		videoVista.getBtnListarPs().addActionListener(null);	
+		videoVista.getBtnBuscar().addActionListener(this);
+		videoVista.getBtnNuevo().addActionListener(this);
+		videoVista.getBtnSalir().addActionListener(this);
+		videoVista.getBtnListarVs().addActionListener(this);	
 	}
 	
 	public void actionPerformed(ActionEvent e) {		
 		switch(e.getActionCommand()) {
-		case "Mostrar videos":		
-			
+		case "Mostrar todos":			
 			videoVista.getPnlForms().removeAll();			
 			videoVista.getPnlForms().add(videoVista.getTxtListar());
+			videoVista.getPnlForms().repaint();
 			
-			List<Video> ps = VideoDAO.getVideo();
+			List<Video> vs = videoDao.getVideos();
 			String txt = "";
 			
-			for(int i=0;i<ps.size();i++) {
-				txt += ps.get(i).toString();
+			for(int i=0;i<vs.size();i++) {
+				txt += vs.get(i).toString();
 				videoVista.setTxtListar(txt);
 			}
 			break;
