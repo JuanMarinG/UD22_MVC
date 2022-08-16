@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JSeparator;
 
+import com.team5.ud22.mvc.vista.paneles.ClienteBuscar;
+import com.team5.ud22.mvc.vista.paneles.ClienteNuevo;
 import com.team5.ud22.mvc.vista.paneles.PanelTest;
 
 import java.awt.Color;
@@ -31,7 +33,7 @@ public class ClienteVista extends JFrame {
 		setBounds(150, 150, 800, 375);
 
 		/* Definition of the window */
-		setTitle("Cientificos"); // PopUp window title
+		setTitle("Clientes"); // PopUp window title
 		setBounds(300, 200, 700, 420); // X Y coordinates of the application and its height and length
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // Close the window when the operation is close
 		//setVisible(true);
@@ -48,11 +50,12 @@ public class ClienteVista extends JFrame {
 		contentPane.add(panelForms);
 		panelForms.setLayout(new CardLayout(0, 0));
 		
-		cNuevo = new PanelTest();
+		cNuevo = new ClienteNuevo();
 		cModificar = new JPanel();
 		cEliminar = new JPanel();
-		cBuscar = new JPanel();
+		cBuscar = new ClienteBuscar();
 		
+		cBuscar.setPreferredSize(new Dimension(300, 40));
 		cNuevo.setPreferredSize(new Dimension(300, 40));
 		
 		cModificar.setBackground(Color.yellow);
@@ -61,8 +64,8 @@ public class ClienteVista extends JFrame {
 		cEliminar.setBackground(Color.BLACK);
 		cEliminar.setPreferredSize(new Dimension(300, 40));
 		
-		cBuscar.setBackground(Color.WHITE);
-		cBuscar.setPreferredSize(new Dimension(300, 40));
+
+		
 
 		// BOTONES		
 		btnNuevo = new JButton("Nuevo");

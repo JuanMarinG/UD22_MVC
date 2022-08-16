@@ -80,7 +80,7 @@ public class ClienteNuevo extends JPanel {
         textField_4.setBounds(83, 216, 235, 20);
         add(textField_4);
         
-        JLabel lblNewLabel_1 = new JLabel("NUEVO CIENTIFICO");
+        JLabel lblNewLabel_1 = new JLabel("Nuevo Cliente");
         lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
         lblNewLabel_1.setBounds(10, 11, 178, 39);
         add(lblNewLabel_1);

@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.team5.ud22.mvc.vista.ClienteVista;
+import java.awt.Font;
 
 
 public class ClienteControlador implements ActionListener{
@@ -20,6 +21,7 @@ public class ClienteControlador implements ActionListener{
 	
 	public ClienteControlador() {
 		clienteVista = new ClienteVista();		
+		clienteVista.getBtnNuevo().setFont(new Font("Tahoma", Font.BOLD, 12));
 		afegirListenersBotons();
 	}
 	
