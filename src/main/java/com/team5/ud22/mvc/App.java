@@ -2,6 +2,7 @@ package com.team5.ud22.mvc;
 
 import javax.swing.JOptionPane;
 import com.team5.ud22.mvc.controlador.ClienteControlador;
+import com.team5.ud22.mvc.controlador.Ex2Controlador;
 import com.team5.ud22.mvc.controlador.Ex3Controlador;
 
 public class App {
@@ -16,10 +17,10 @@ public class App {
         //System.out.println("ok");
         switch(n) {
         case "1":
-            new ClienteControlador();
+            new ClienteControlador().display();
             break;
         case "2":
-            //new Ex2Controlador().display();
+            new Ex2Controlador().display();
             break;
         case "3":
             new Ex3Controlador().display();
